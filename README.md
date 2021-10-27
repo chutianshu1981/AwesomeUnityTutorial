@@ -30,24 +30,32 @@ Select the official high-quality tutorials as the introductory learning content,
 - 以官方资料为主，其他资料为辅
 - 官方教程、官方手册、官方 API 、官方论坛
 - 开源游戏项目
-- unity 2021.1 版本
+- unity 2021.X 版本
 
 ![](/imgs/unity课程设置.png)
 
-## 2. 方式
+## 2. 教程内容
 
 - 课程文档
 - 课程视频
 - 作业
 - 项目实训
 
-## 3. 资源
+## 3. 学习方式
+
+Unity 不同于编程，很多操作，仅用文档很难说明白，需要以视频教程为主，文档资料为辅
+
+所以，本教程学习路线是以下面的 B 站教程为主线，需要文档时，再到这里看对应的。
+
+每个视频下方文字介绍中，都有该视频对应的文档地址
+
+## 4. 资源
 
 - [教程视频 B 站地址](https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912)
 - [最新官方手册文档中文版](https://docs.unity3d.com/cn/2021.2/Manual/UnityManual.html)
 - [官方 C#入门教程](https://learn.u3d.cn/tutorial/beginner-gameplay-scripting)
 
-## 4. 游戏开发
+## 5. 游戏开发
 
 ![](/imgs/商业Game开发团队设置.awebp)
 
