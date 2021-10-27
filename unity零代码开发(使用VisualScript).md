@@ -17,7 +17,7 @@
    从版本 2021.1 开始，默认情况下可视化脚本作为包安装。您可以在包管理器中查看它。  
    对于早期版本的 Unity, 2019 和 2020 LTS 版本，可以从 Unity Asset Store 免费下载 Bolt 可视化脚本。
 
-![](../../imgs/unity_visualScript.png)
+![](/imgs/unity_visualScript.png)
 
 ## 2. 优缺点
 

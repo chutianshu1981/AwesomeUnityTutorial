@@ -173,9 +173,9 @@ Unity 中最基本的游戏元素，默认值包含 Transform 组件（变形组
 - 接下来，按需加载 Game Object
 - 如果这个 Game Object 包含脚本组件，则脚本组件会按照下面图中顺序，执行生命周期函数
 
-![](../../imgs/unity脚本生命周期方法.png)
+![](/imgs/unity脚本生命周期方法.png)
 
-![](../../imgs/unity脚本生命周期方法1.png)
+![](/imgs/unity脚本生命周期方法1.png)
 
 - [脚本生命周期参考资料 1](https://blog.csdn.net/weixin_44302602/article/details/105905288)
 - [脚本生命周期参考资料 2](https://www.huaweicloud.com/articles/c26fc1c511e0c6a1df832a834b1196a1.html)
