@@ -5,7 +5,7 @@
 > - [百度网盘地址](https://pan.baidu.com/s/1frsqKKhqSMOYjMF6CD7AzA) 提取码: b8ym
 > - [迅雷云盘地址](https://pan.xunlei.com/s/VMk08AooAFpxmtm7yZKyxUv6A1) 提取码：d9tf
 
-![](../../../../imgs/unity_creatorKitFPS.png)
+![](../../imgs/unity_creatorKitFPS.png)
 
 > 本地 unitypackage 文件使用：  
 > 新建项目 --> 打开项目 --> 将 unitypackage 文件拖入已打开 unity 的界面的 Project 窗口中 --> 选择需要导入的资源，import 导入
@@ -88,7 +88,7 @@
    在 Inspector 窗口中，找到 Level Layout 组件。单击 Editing Layout。这样会默认启用添加模式。然后，单击 CorridorGroup 以添加走廊，或者单击 RoomGroup 以添加房间。  
    你可以按键盘上的 R 键来旋转房间并更改这个房间尝试贴靠到的门。对位置感到满意后，请单击鼠标按钮来放置房间。
 
-   ![](../../../../imgs/unity_fpsmap.png)
+   ![](../../imgs/unity_fpsmap.png)
 
    如果操作失误或者要删除房间，请单击组件中的 Remove 按钮。完成此操作后，将光标移到 Scene 视图中的房间和走廊上方就会突出显示这些房间和走廊。单击一个房间即可将这个房间删除。
 
@@ -100,11 +100,11 @@
 4. 添加钥匙并匹配门：  
    在 Project 窗口中，选择 Key 预制件，拖拽到 scene 中，选择合适的位置，在 Inspector 中，找到 Key 组件。在 Key Type 字段中，为钥匙提供一个唯一的名称。
 
-   ![](../../../../imgs/unity_fpskey.png)
+   ![](../../imgs/unity_fpskey.png)
 
    在 Hierarchy 中，选择 FatBlob 游戏对象。在 Inspector 中，找到相应的 Lock 组件。使用下拉菜单将 Key Type 值设置为所选的钥匙名称
 
-   ![](../../../../imgs/unity_fpslock.png)
+   ![](../../imgs/unity_fpslock.png)
 
    现在，玩家只要收集到钥匙，就可以开启对应的门
 
@@ -141,7 +141,7 @@
 3. 将碰撞体放在合适位置：  
    使用变换组件工具将该对象放置在所需的关卡结束位置。房间或走廊的尽头就很适合作为关卡终点。
 
-   ![](../../../../imgs/unity_FPSEndZone.png)
+   ![](../../imgs/unity_FPSEndZone.png)
 
 ## 6. 构建游戏
 
@@ -175,4 +175,4 @@
 
 文章也同时同步微信公众号，喜欢使用手机观看文章的可以关注
 
-![](../../../../imgs/微信公众号二维码.jpg)
+![](../../imgs/微信公众号二维码.jpg)

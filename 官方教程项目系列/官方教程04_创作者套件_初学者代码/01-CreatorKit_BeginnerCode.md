@@ -5,7 +5,7 @@
 > - [百度网盘地址](https://pan.baidu.com/s/15lRmIzkZmZU6vmQNsTLDVg) 提取码: 8nzx
 > - [迅雷云盘地址](https://pan.xunlei.com/s/VMk08AooAFpxmtm7yZKyxUv6A1) 提取码：d9tf
 
-![](../../../../imgs/unity_beginnerCoder.png)
+![](../../imgs/unity_beginnerCoder.png)
 <br>
 
 <hr>
@@ -34,7 +34,7 @@
 
 * ....
 
-![](../../../../imgs/unity_creatorKitBC.png)
+![](../../imgs/unity_creatorKitBC.png)
 
 ## 2. 使用 visual studio 作为脚本代码编辑器
 
@@ -106,4 +106,4 @@ public class SpawnerSample : MonoBehaviour
 
 文章也同时同步微信公众号，喜欢使用手机观看文章的可以关注
 
-![](../../../../imgs/微信公众号二维码.jpg)
+![](../../imgs/微信公众号二维码.jpg)
