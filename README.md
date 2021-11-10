@@ -16,7 +16,7 @@ Select the official high-quality tutorials as the introductory learning content,
 - 知识点不全，且离散
 - 几个系列学完后，想要开始做自己的游戏，还是什么都不会
 
-**本教程**：
+**本教程设计原则**：
 
 - 精选官方高质量教程作为入门学习内容，选择最优学习路线，力求学习过程“如丝般顺滑”
 - 分阶段安排学习内容：入门系列 -- 进阶系列 -- 高级系列
