@@ -8,9 +8,8 @@ Select the official high-quality tutorials as the introductory learning content,
 
 ## 0. 特点
 
-<span style="font-color:'red'">其他教程：</span>
+<span style="font-color:'red'">教程避免出现的问题：</span>
 
-- 内容质量参差不齐，初学者不容易判断好坏，难以抉择
 - 直接开始讲怎么从零开始，做具体的某个游戏
 - 只告诉你怎么做，而不告诉为什么要这么做
 - 不考虑知识点的关联和难度递进
