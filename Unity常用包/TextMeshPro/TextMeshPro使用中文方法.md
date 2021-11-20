@@ -2,7 +2,7 @@
 
 ## 1. TextMeshPro 简介
 
-> [TextMeshPro 包官方文档](https://docs.unity3d.com/Packages/com.unity.textmeshpro@3.0/manual/index.html)
+> [TextMeshPro 包官方文档](https://docs.unity3d.com/Packages/com.unity.textmeshpro@4.0/manual/index.html) 最新版，请注意版本
 
 ## 2. 中文显示问题
 
@@ -64,3 +64,4 @@ Unity 的 TextMashPro 自带的几款字体都是英文字体，没有中文。
 > 参考资料：
 >
 > - [https://zhuanlan.zhihu.com/p/375889482](https://zhuanlan.zhihu.com/p/375889482)
+> - [https://blog.csdn.net/weixin_42352178/article/details/108936994](https://blog.csdn.net/weixin_42352178/article/details/108936994)
