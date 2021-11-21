@@ -10,7 +10,7 @@ Unity 的 TextMashPro 自带的几款字体都是英文字体，没有中文。
 
 在 inspector 中设置中文，会显示成方块，无法正常使用
 
-![](../imgs/unity_cnfonterror.png)
+![](../../imgs/unity_cnfonterror.png)
 
 ## 3. 问题解决方案
 
@@ -42,7 +42,7 @@ Unity 的 TextMashPro 自带的几款字体都是英文字体，没有中文。
   - Generate Font Atlas ：点击按钮，生成静态字体图集（比较慢的一个过程）
   - Save：保存生成的字体 asset
 
-![](../imgs/unity_staticFont.png)
+![](../../imgs/unity_staticFont.png)
 
 在我的云盘中，分享了 16159 中文和符号 txt ,以及已经转换好的静态字体文件
 
@@ -54,7 +54,7 @@ Unity 的 TextMashPro 自带的几款字体都是英文字体，没有中文。
 
 可以用 Font Fallback 来外挂一些低频使用、或者特殊的符号、字体。
 
-![](../imgs/fontfallback.jpg)
+![](../../imgs/fontfallback.jpg)
 
 <br><br>
 
