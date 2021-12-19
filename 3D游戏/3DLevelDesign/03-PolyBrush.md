@@ -45,3 +45,9 @@ Polybrush 提供了五种执行不同任务的画笔模式:
 ![](../../imgs/polybrush_brushMode.png)
 
 每个模式的具体配置和画笔设置，请直接参考官方文档
+
+### 2.3 画笔设置
+
+![](../../imgs/PolybrushPanel_BrushSettings_WithLetters.png)
+
+![](../../imgs/polybrush-1.png)
