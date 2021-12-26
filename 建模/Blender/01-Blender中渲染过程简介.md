@@ -37,3 +37,8 @@ Blender 内置三个各具优势的渲染引擎:
 - Eevee 是基于物理的实时渲染器。
 - Cycles 是基于物理的光线追踪渲染器。
 - 工作台 专为布局，建模和预览而设计的。
+
+> 参考资料：
+>
+> - [Blender 官方文档](https://docs.blender.org/manual/zh-hans/3.0/render/introduction.html)
+> - [知乎讨论](https://www.zhihu.com/question/25745472)
