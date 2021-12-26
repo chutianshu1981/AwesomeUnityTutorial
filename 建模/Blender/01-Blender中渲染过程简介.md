@@ -4,7 +4,7 @@
 
 ### 1. 着色 Shading
 
-在 Blender 中，Shading 代表的是一个工作区域，在其中可以进行材质的高级配置，通过 Shader Node 来实现
+在 Blender 中，Shading 代表的是一个工作区域，通过其中包含的默认窗口区域在其中可以进行光影、纹理、材质、着色器等配置，通过 Shader Node 来实现
 
 ### 2. 材质 Material
 
