@@ -2,33 +2,33 @@
 
 ## 1. 相关概念
 
-### 1. 着色 Shading
+### 1.1 着色 Shading
 
 在 Blender 中，Shading 代表的是一个工作区域，通过其中包含的默认窗口区域在其中可以进行光影、纹理、材质、着色器等配置，通过 Shader Node 来实现
 
-### 2. 材质 Material
+### 1.2 材质 Material
 
 材质控制着网格，曲线，体积和其它物体的外观。它们定义了物体的组成物质，颜色，纹理，以及与光照的交互。
 
 是管理模型外观显示的数据集。
 
-### 3. Shader
+### 1.3 Shader
 
 着色器，是运行在 GPU 上的着色程序。
 
-### 4. Shader Node
+### 1.4 Shader Node
 
 类似于 Unity 中的 Shader Graph，用图形化方式来编辑出 Shader 程序逻辑，由 Blender 处理后生成可执行的 Shader 程序用于最终渲染。
 
 其中可视化编辑节点，就称为 Shader Node。编辑区域为 Shader Editor ，默认包含在 Shading 工作区域中。
 
-### 5. 纹理 Texture
+### 1.5 纹理 Texture
 
 贴在 3D 模型上的外皮，一般是 2D 位图，可以是单独的素材，也可以是用算法生成。
 
 通过 Maping 贴图操作，映射到模型 3D 网格上
 
-### 6. 渲染 render
+### 1.6 渲染 render
 
 渲染是将三维场景转换为二维图像的过程。通过渲染得到最终要显示的结果
 

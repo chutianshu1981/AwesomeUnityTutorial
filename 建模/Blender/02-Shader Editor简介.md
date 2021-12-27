@@ -33,6 +33,28 @@ Shader Editor 中的节点有很多种类，分别承担不同的功能
 
 ![](../../imgs/shander_node_type.png)
 
+### 2.3 默认材质 shader Node
+
+Principled BSDF 是 Blender 默认材质 Shader node
+
+> 官方概念:  
+> Principled BSDF 将多个层组合成一个易于使用的节点。 它基于迪士尼原理模型，也称为“PBR”着色器，使其与其他软件兼容，如皮克斯的 Renderman® 和虚幻引擎 ®。 从 SubstancePainter® 等软件绘制或烘焙的图像纹理可以直接链接到此着色器中的相应参数。
+
+![](../../imgs/PBR_Node.png)
+
+BSDF: 双向散射分布函数，指的是一种处理光线散射的算法，用来处理 shader 中的光线散射效果。
+
+通过不同的参数配置，可以得到不同的颜色、光照、纹理等效果，以产生丰富多变的表皮外观
+
+重要参数：
+
+- Base color 基础色 —— 连接到 BSDF 中的 basecolor
+- Metallic 金属 —— 数据源为 Non-color data，连接到 BSDF 中的 metallic
+- Roughness 粗糙度—— 数据源为 Non-color data，连接到 BSDF 中的 roughness
+- Normal 法线 —— 数据源为 Non-color data，新建 Vector - normal map 节点，新建 Vector-bump node 节点，连接到 normal，再连接到 BSDF 中的 normal
+- Height/displacement 等高线 —— 数据源为 Non-color data，连接到 BSDF 中的 metallic
+- Ambient occlusion 环境光遮蔽—— Blender 已经自动处理了，不过在游戏引擎里需要用到
+
 ## 3. Shader 基本操作流程
 
 1. 选择图形对象，通过 slot 添加材质或挂接材质
