@@ -16,7 +16,7 @@ slot 中，存储的是 Material 到 对象上的 Link 关系。
 
 一个对象，可以有多个不同的 Slot，Slot 属于具体的对象；而 Material 是独立的数据集，可以挂接到多个不同的对象，可以重复使用。
 
-删除对象后，它所拥有的 Slot 就不再存在；而在一个对象上删除 Material ，只是删除关联， Material 本身还存在，可以继续使用，除非直接删除 Material 文件。
+删除对象后，它所拥有的 Slot 就不再存在，但是 Material 并不会随之被删掉，可以继续使用，除非直接删除 Material 文件。
 
 ## 2. Shader Node
 
