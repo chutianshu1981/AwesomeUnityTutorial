@@ -16,6 +16,12 @@
 
 渲染的效果由 相机， 灯光 和 材质 决定。这些在 Eevee 和 Cycles 之间是通用的，但某些功能仅有其一支持。
 
+不同的 着色窗口（Shading Viewport）模式下，使用不同的渲染引擎：
+
+1. WireFrame 线框模式 和 Solid 模式：WorkBench 引擎
+2. Material Preview 材质预览模式： Eevee 引擎
+3. Rendered 渲染模式： Eevee 或 Cycles 或 WorkBench
+
 ### 1.1 Eevee
 
 eevee 是 blender 的实时渲染引擎，应用 OpenGL 技术来实现，专注于速度和交互性，同时实现了渲染 PBR 材质的目标。
