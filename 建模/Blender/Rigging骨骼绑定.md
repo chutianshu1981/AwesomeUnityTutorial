@@ -17,6 +17,15 @@ Blender 中的支架（armature）可以被认为类似于真实骨架（skeleto
 
 ![](../../imgs/animation_armatures_structure_armature-example.png)
 
+使用 Armature 基本步骤：
+
+1. 建立模型；3d Modeling
+2. 创建对应骨架; Creating Armature
+3. 蒙皮（绑定骨骼）；Rigging
+4. 创建动作（动画片段）: Action Animation clip
+5. 导出 blender
+6. 导入 unity
+
 ## 3. Bone 骨骼
 
 Armature 由多个 Bone 组成
@@ -172,3 +181,9 @@ Bone Properties -> Relations 中，可以更改选中 bone 的 parent
 - Shift-G 选择菜单
 
 ![](../../imgs/bones_select_shiftG.png)
+
+## 4. 骨骼控制
+
+### 4.1 正向动力学
+
+### 4.2 反向动力学
