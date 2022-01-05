@@ -22,9 +22,10 @@ Blender 中的支架（armature）可以被认为类似于真实骨架（skeleto
 1. 建立模型；3d Modeling
 2. 创建对应骨架; Creating Armature
 3. 蒙皮（绑定骨骼）；Rigging
-4. 创建动作（动画片段）: Action Animation clip
-5. 导出 blender
-6. 导入 unity
+4. 设置骨骼控制；Creating Rig controller
+5. 创建动作（动画片段）: Action Animation clip
+6. 导出 blender：export
+7. 导入 unity：import
 
 ## 3. Bone 骨骼
 
