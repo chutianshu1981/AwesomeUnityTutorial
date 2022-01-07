@@ -64,12 +64,6 @@
 - 跟踪
 - 关系
 
-## 5. 基本变换约束
-
-### 5.1 Copy L/R/S Constraint
-
-### 5.2 Limit L/R/S Constraint
-
 <br>
 
 <hr>
