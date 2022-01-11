@@ -28,4 +28,4 @@ Edit - Preference - Add-ons - 搜索 Rigify，并激活
 4. 自动分配权重，建立骨架和模型的父子关系，完成绑定。（如果需要，还可以进一步调整权重）
 
 > 参考资料：
-> [Rigify 官方文档](https://docs.blender.org/manual/en/3.0/addons/rigging/rigify/index.html)
+> [Rigify 官方文档](https://docs.blender.org/manual/en/3.0/addons/rigging/rigify/index.html) > [3d 免费素材网站 models-resource](https://www.models-resource.com/pc_computer/counterstrike16/model/7982/)
