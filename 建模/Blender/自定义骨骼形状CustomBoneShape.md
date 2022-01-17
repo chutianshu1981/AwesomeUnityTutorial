@@ -36,11 +36,17 @@
 [Orient bone shapes](https://github.com/scaredyfish/orient_bone_shapes)
 
 1. 安装
+   ![](../../imgs/orient_custom_shape_Addon.png)
 2. 定位到 Pose Mode 下
 3. 先选中 Mesh 对象，再选中骨骼，右键 Set and align bone shape。会在 Mesh 对象的位置生成一个一模一样的骨骼外观
+   ![](../../imgs/orient_custom_bone_shape_addon_use.png)
 
 > 注意：  
 > 如果要让骨骼位置不移动，需要先将 Mesh 对象移动到骨骼的位置
+
+<br>
+<hr>
+<br>
 
 > 参考资料：
 >
