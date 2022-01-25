@@ -71,6 +71,9 @@ Unity 内置的着色器，可以直接配置后使用，不用从零开始编�
 
 ![](../imgs/unity_building_shader.png)
 
+> 注意：  
+> 着色器必须与项目的渲染管线兼容。如果新建了一个空项目，却导入了使用不同渲染管线旧项目，很大几率会造成兼容性错误，所有 3D 模型外观将成为紫色。
+
 ## 6. Physically Based Shading 基于物理着色
 
 ### 6.1 物理着色 PBS
@@ -81,9 +84,7 @@ PBR 模拟现实世界的物理原理和光，以在 3D 表面上生成逼真的
 
 在下图中，每个表面的外观随着场景中光线的变化而变化。每个图像中表面的属性都是相同的——只是光的颜色和方向发生了变化。
 
-<video id="video" controls="" preload="none" poster="封面">
-      <source id="mp4" src="../imgs/PBRExample.mp4" type="video/mp4">
-</videos>
+![](../imgs/PBRExample.gif)
 
 ### 6.2 non-Physically Based Rendering 非物理着色 NPBS
 
@@ -92,3 +93,34 @@ PBR 模拟现实世界的物理原理和光，以在 3D 表面上生成逼真的
 非 PBR 通常看起来不像 PBR 那样逼真，但对于风格化效果可能更理想。使 3D 场景中的表面看起来像 2D 卡通的卡通着色器是一种非 PBR 着色器。
 
 ![](../imgs/npbs.png)
+
+## 7. 在 URP 中使用 Shader
+
+在 3D 对象的 Material 属性面板上，可以选择要是用的 shader
+
+![](../imgs/urp_shader.png)
+
+### 很多着色器的名称中都有 Lit 或 Unlit 。
+
+- Lit：光照着色器响应场景中的光线，而无光照着色器则不会。
+- Unlit：无光照着色器对于某些艺术效果或通过不使用光照更有效地运行的优化项目很有用。
+
+> 注意：
+> 一般不建议更改已创建材质的着色器。应该在创建材质时，选定 shader ，之后就不再改动，否则很容易出错
+
+### Universal Render Pipeline 中的着色器分类：
+
+- 2D > Sprite-Lit-Default ：专为 2D 项目设计，此着色器仅适用于平面对象，并将任何 3D 对象渲染为 2D。作为光照着色器，它将根据场景中到达对象的光线进行渲染。
+- Particles > Lit、Simple Lit 和 Unlit：这些着色器用于视觉效果 (VFX)
+- Terrain > Lit：此着色器针对 Unity 中的 Terrain 工具进行了优化
+- Baked Lit 烘焙光照：此着色器会自动应用于光照贴图
+- 复杂光照 Complex Lit、光照 Lit 和简单光照 Simple Lit：这些都是通用的、基于物理的光照着色器的变体。
+- Unlit：如上所述，不使用灯光的着色器。
+
+### Automatic material upgrade for URP -- URP 自动材质升级
+
+从 Unity 编辑器的主菜单中，选择 Edit > Render Pipeline > Universal Render Pipeline > Upgrade Project Materials to UniversalRP Materials
+
+弹出窗口会要求您确认您有项目的备份
+
+此功能在使用通用渲染管道的 Unity 项目中可用。当您导入在另一个渲染管道中开发的资产包或将项目从不同的渲染管道转换为 URP 时，都可以使用
