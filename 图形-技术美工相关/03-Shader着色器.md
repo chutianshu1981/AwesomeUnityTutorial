@@ -4,7 +4,7 @@
 
 着色器是一段脚本程序，在 GPU 上运行。
 
-每个着色器都是为特定的渲染管道编写的。
+每个着色器都是为特定的渲染管道编写的，也就是说，shader 绑定 render pip line，不能在不同的渲染管线上是使用。
 
 ![](../imgs/f9a7bbfa-9e76-42f3-bf2c-7ef4bdd896a9_CC_Shad_Shdrs_1.png.2000x0x1.png)
 
