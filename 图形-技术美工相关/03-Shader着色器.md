@@ -78,6 +78,9 @@ Unity 内置的着色器，可以直接配置后使用，不用从零开始编�
 
 ### 6.1 物理着色 PBS
 
+- PBS ： Physically Based Shading 基于物理着色
+- PBR ： Physically Based Rendering 基于物理渲染
+
 基于物理着色 (PBS) 以一种模仿现实的方式模拟材质和光照之间的相互作用。
 
 PBR 模拟现实世界的物理原理和光，以在 3D 表面上生成逼真的阴影、反射、环境光和其他光效果。
