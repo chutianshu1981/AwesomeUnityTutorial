@@ -198,7 +198,9 @@ albedo 从表面反射回的入射光的比例。
 
 ### 5.3 Normal Map 法线贴图
 
-通过设置法线贴图，可以添加表面细节，如凹凸、划痕和凹槽
+通过设置法线贴图，可以添加表面细节，如凹凸、划痕和凹槽。
+
+好处是，使用 2D 资源模拟出 3D 表面细节效果，大幅度节省机器性能
 
 ![](../imgs/normal_map.png)
 
@@ -210,15 +212,47 @@ albedo 从表面反射回的入射光的比例。
 
 URP 实现了视差映射技术，该技术使用高度贴图通过移动可见表面纹理的区域来实现表面级遮挡效果。
 
+它类似于法线映射的概念，但是这种技术更复杂，因此性能也更昂贵。
+
+高度贴图通常与法线贴图一起使用，通常它们用于想给表面定义一个很大的凹凸效果使用。
+
 ![](../imgs/heightMap.png)
 
-设置旁边的浮点值是高度图效果的乘数。低值会降低高度图的效果。高值会产生更强的效果。
+设置旁边的浮点值是高度图效果的乘数。低值会降低高度贴图的效果。高值会产生更强的效果。
+
+这种效果，它可以产生一个非常令人信服的 3D 几何效果，表面的凹凸效果有些会相互遮挡住，看起来真的像是 3D 几何体，但真实的几何体没有任何修改，因为这仅仅是绘制一个表面的效果。
+
+高度贴图正常应该是张灰度图，白色代表凸起的部分，黑色代表凹下的部分。下面就是 Albedo 贴图和高度贴图的匹配使用。
+
+![](../imgs/albedo_wall.JPEG)
+
+下图从左向右说明：
+
+1. 岩石墙材质只设置了 Albedo 贴图，没有设置法线贴图和高度贴图。
+2. 设置了法线贴图。修改了表面的光照，但岩石间没有相互遮挡效果。
+3. 这个精致的效果是使用了法线贴图和高度贴图。岩石看起来就像是从表面凸起来似的，靠近相机的岩石看起来可以遮挡着后面的岩石。
+
+![](../imgs/heightmapWall.JPEG)
 
 ### 5.5 Occlusion Map 遮挡贴图
 
 遮挡贴图用于模拟来自环境光和反射的阴影，这使得照明看起来更逼真，因为更少的光到达物体的角落和缝隙
 
 ![](../imgs/OcclusionMap.png)
+
+用于提升模型间接光影效果。间接光源可能来自 Ambient Lighting（环境光），因此模型中凹凸很明显的凹下去那部分，如裂缝或褶皱，实际上不会接收到太多的间接光。
+
+一张遮挡贴图应该就是张灰度图，白色代表应该接收到的间接光效果会多一些，黑色代表少一些（全黑说明一点间接光都不接收）。
+
+生成遮挡纹理稍微更复杂一些。例如，在场景中有个角色戴了一帽子，在帽子和角色的头之间会有些边缘是几乎接收不到间接光的。在这种情况，这种遮挡贴图通常是由美术同学使用 3D 软件根据模型自动生成的。
+
+![](../imgs/ao.JPEG)
+
+遮挡贴图定义了角色的头戴的披肩附近的部分，哪些相对 Ambient lighting（环境光）是曝光，哪些是挡光的。如下图显示。
+
+![](../imgs/occlusionMap.JPEG)
+
+在应用遮挡贴图前后的效果图（左边没使用，右边使用了）。部分模型的区域被遮挡了，特别是在脖子周围的头戴饰品遮挡的那部分，左边的图片显示太亮了，右边的图片设置了环境光遮挡贴图后的效果，脖子那些绿色的、来自环境草木的环境光就没那么亮了。
 
 ### 5.6 Emssion 散发（光）
 
@@ -274,3 +308,6 @@ Tilling 和 Offset 跟上面的功能相同
 > - [官方教程-模拟固体表面](https://learn.unity.com/tutorial/simulate-solid-surfaces)
 > - [URP 官方文档-着色器和材质](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/shaders-in-universalrp.html)、
 > - [Material physics in context of PBR texturing](https://handlespixels.wordpress.com/2018/03/23/material-physics-in-context-of-texturing/)
+> - [Height Map 高度贴图](http://www.noobyard.com/article/p-mthigxse-pb.html)
+> - [ Occlusion Map 遮挡贴图](http://www.noobyard.com/article/p-ulvnjlzv-pb.html)
+> - [灰度图、高度图和法线贴图 介绍及原理](https://blog.csdn.net/Game_jqd/article/details/82056157)
