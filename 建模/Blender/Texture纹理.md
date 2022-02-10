@@ -45,3 +45,14 @@ UV 映射是把二维贴图映射到三维物体最灵活的方法。在此过�
 ![](../../imgs/worleyNosie.png)
 
 [Worley Noise 扩展阅读](https://thebookofshaders.com/12/?lan=ch)
+
+<br>
+<hr>
+<br>
+
+配套视频教程：
+[https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912](https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912)
+
+文章也同时同步微信公众号，喜欢使用手机观看文章的可以关注
+
+![](../../imgs/微信公众号二维码.jpg)

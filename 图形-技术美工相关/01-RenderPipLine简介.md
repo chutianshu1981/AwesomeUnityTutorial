@@ -64,3 +64,14 @@ URP 和 HDRP 都是 Scriptable Render Pipelines ( SRP )。SRP 是高度可定制
 如果你很了解计算机图形学，可以根据这个链接：[选择和配置渲染管线和光照解决方案](https://docs.unity3d.com/cn/2022.1/Manual/BestPracticeLightingPipelines.html)，来自己做决断
 
 ![](../imgs/BestPracticeLightingPipeline16.svg)
+
+<br>
+<hr>
+<br>
+
+配套视频教程：
+[https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912](https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912)
+
+文章也同时同步微信公众号，喜欢使用手机观看文章的可以关注
+
+![](../../imgs/微信公众号二维码.jpg)

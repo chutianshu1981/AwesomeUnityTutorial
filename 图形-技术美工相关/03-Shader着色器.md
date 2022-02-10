@@ -119,3 +119,14 @@ PBR 模拟现实世界的物理原理和光，以在 3D 表面上生成逼真的
 - Baked Lit 烘焙光照：此着色器会自动应用于光照贴图
 - 复杂光照 Complex Lit、光照 Lit 和简单光照 Simple Lit：这些都是通用的、基于物理的光照着色器的变体。
 - Unlit：如上所述，不使用灯光的着色器。
+
+<br>
+<hr>
+<br>
+
+配套视频教程：
+[https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912](https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912)
+
+文章也同时同步微信公众号，喜欢使用手机观看文章的可以关注
+
+![](../../imgs/微信公众号二维码.jpg)

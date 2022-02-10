@@ -55,3 +55,14 @@ Material 类表示 C# 代码中的材质。有关信息，请参阅在 C# 脚本
 #### URP 材质属性面板：
 
 ![](../imgs/urp_material_inspector.png)
+
+<br>
+<hr>
+<br>
+
+配套视频教程：
+[https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912](https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912)
+
+文章也同时同步微信公众号，喜欢使用手机观看文章的可以关注
+
+![](../../imgs/微信公众号二维码.jpg)

@@ -29,3 +29,14 @@ Edit - Preference - Add-ons - 搜索 Rigify，并激活
 
 > 参考资料：
 > [Rigify 官方文档](https://docs.blender.org/manual/en/3.0/addons/rigging/rigify/index.html) > [3d 免费素材网站 models-resource](https://www.models-resource.com/pc_computer/counterstrike16/model/7982/)
+
+<br>
+<hr>
+<br>
+
+配套视频教程：
+[https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912](https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912)
+
+文章也同时同步微信公众号，喜欢使用手机观看文章的可以关注
+
+![](../../imgs/微信公众号二维码.jpg)

@@ -60,3 +60,14 @@ BSDF: 双向散射分布函数，指的是一种处理光线散射的算法，�
 1. 选择图形对象，通过 slot 添加材质或挂接材质
 2. 整个 Shader 操作的核心资源是 Material ，需要配置好材质，比如设置纹理、配置颜色等
 3. 灵活使用各种节点，设计 Shader 流程，将设置好的材质最终输出给对象，用于渲染展示
+
+<br>
+<hr>
+<br>
+
+配套视频教程：
+[https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912](https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912)
+
+文章也同时同步微信公众号，喜欢使用手机观看文章的可以关注
+
+![](../../imgs/微信公众号二维码.jpg)

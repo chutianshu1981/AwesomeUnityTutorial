@@ -23,3 +23,14 @@
 - 步骤 2 ：Add Modifier 下拉列表，选择要添加的修改器
 - 步骤 3 : 配置修改器中属性
 - 步骤 4（可选）：如果需要将修改持久化，可以点击 Apply 应用该修改器
+
+<br>
+<hr>
+<br>
+
+配套视频教程：
+[https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912](https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912)
+
+文章也同时同步微信公众号，喜欢使用手机观看文章的可以关注
+
+![](../../imgs/微信公众号二维码.jpg)

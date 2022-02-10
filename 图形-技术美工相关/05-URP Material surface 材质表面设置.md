@@ -349,3 +349,14 @@ Tilling 和 Offset 跟上面的功能相同
 > - [Height Map 高度贴图](http://www.noobyard.com/article/p-mthigxse-pb.html)
 > - [ Occlusion Map 遮挡贴图](http://www.noobyard.com/article/p-ulvnjlzv-pb.html)
 > - [灰度图、高度图和法线贴图 介绍及原理](https://blog.csdn.net/Game_jqd/article/details/82056157)
+
+<br>
+<hr>
+<br>
+
+配套视频教程：
+[https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912](https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912)
+
+文章也同时同步微信公众号，喜欢使用手机观看文章的可以关注
+
+![](../../imgs/微信公众号二维码.jpg)
