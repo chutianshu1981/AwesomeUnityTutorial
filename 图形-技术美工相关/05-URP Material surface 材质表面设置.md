@@ -198,15 +198,30 @@ albedo 从表面反射回的入射光的比例。
 
 ### 5.3 Normal Map 法线贴图
 
-通过设置法线贴图，可以添加表面细节，如凹凸、划痕和凹槽。
-
-好处是，使用 2D 资源模拟出 3D 表面细节效果，大幅度节省机器性能
-
-![](../imgs/normal_map.png)
+法线贴图 (Normal Map) 是一种凹凸贴图 (Bump Map)。通过设置法线贴图，可以添加表面细节，如凹凸、划痕和凹槽。从而捕捉光线，就像由真实几何体表示一样。
 
 法线贴图拾取环境中的环境光照。
 
+![](../imgs/normal_map.png)
+
 设置旁边的浮点值是 法线贴图效果的乘数。低值会降低法线贴图的效果。高值会产生更强的效果。
+好处是，使用 2D 资源模拟出 3D 表面细节效果，大幅度节省机器性能
+
+例如，您可能希望显示一个表面，在表面上有凹槽和螺钉或铆钉，比如飞机机身。为实现此目的，一种方法是将这些细节建模为几何体。如下所示，细节建模飞机金属板为真实几何体。
+
+![](../imgs/StandardShaderNormalMapBadGeometry.jpg)
+
+根据具体情况，将这些微小的细节建模为“真实”几何体通常并非一种好的思路。在右侧，您可以看到构成单个螺丝头的细节所需的多边形。在具有大量精细表面细节的大型模型上，这种方案需要绘制极大数量的多边形。为了避免这种情况，我们应使用法线贴图来表示精细的表面细节，而使用分辨率较低的多边形表面来表示模型的较大形状。
+
+如果我们改用凹凸贴图来表示此细节，则表面几何体可以变得简单得多，并且细节将通过纹理呈现，用纹理来调节表面如何反射光。现代图形硬件可以非常快速地完成此过程。现在，金属表面可变为一个简单多边形平面，而螺钉、铆钉、凹槽和划痕将捕捉光线，并会因为纹理而显得有深度。
+
+![](../imgs/StandardShaderNormalMapAircraftSurface.jpg)
+
+上图中，在法线贴图中定义了螺钉、凹槽和划痕，此贴图将修改从这个简单多边形平面的表面反射光线的方式，给人以 3D 细节的印象。除了铆钉和螺钉外，纹理还可以让我们包含大量其他细节，如细微的凹凸和划痕。
+
+在现代游戏开发的美术制作流程中，美术师将使用他们的 3D 建模应用程序基于超高分辨率的源模型生成法线贴图。然后将法线贴图映射到可直接用于游戏的较低分辨率的模型版本，从而使用法线贴图渲染原始的高分辨率细节。
+
+扩展阅读：[官方文档：法线贴图](https://docs.unity3d.com/cn/2020.3/Manual/StandardShaderMaterialParameterNormalMap.html)
 
 ### 5.4 Height Map 高度贴图
 
@@ -328,7 +343,8 @@ Tilling 和 Offset 跟上面的功能相同
 > 参考资料：
 >
 > - [官方教程-模拟固体表面](https://learn.unity.com/tutorial/simulate-solid-surfaces)
-> - [URP 官方文档-着色器和材质](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/shaders-in-universalrp.html)、
+> - [URP 官方文档-着色器和材质](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/shaders-in-universalrp.html)
+> - [官方文档-材质参数](https://docs.unity3d.com/cn/2020.3/Manual/StandardShaderMaterialParameters.html)
 > - [Material physics in context of PBR texturing](https://handlespixels.wordpress.com/2018/03/23/material-physics-in-context-of-texturing/)
 > - [Height Map 高度贴图](http://www.noobyard.com/article/p-mthigxse-pb.html)
 > - [ Occlusion Map 遮挡贴图](http://www.noobyard.com/article/p-ulvnjlzv-pb.html)
