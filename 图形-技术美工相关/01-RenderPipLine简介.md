@@ -74,4 +74,4 @@ URP 和 HDRP 都是 Scriptable Render Pipelines ( SRP )。SRP 是高度可定制
 
 文章也同时同步微信公众号，喜欢使用手机观看文章的可以关注
 
-![](../../imgs/微信公众号二维码.jpg)
+![](../imgs/微信公众号二维码.jpg)
