@@ -315,9 +315,12 @@ URP 实现了视差映射技术，该技术使用高度贴图通过移动可见�
 ![](../imgs/DetailInputs.png)
 
 1. Mask 蒙版：  
+   Mask 是一个 Alpha 通道贴图，可将指定区域与 Base Map 和 Normal Map 微表面贴图隔离开来。  
    选择一个纹理，定义 Unity 将细节贴图覆盖在表面输入贴图上的区域。蒙版使用选定纹理的 Alpha 通道。平铺和偏移设置对蒙版没有影响。
 2. Base Map 基础贴图：  
-   Unity 使用叠加模式将此地图与 Surface Base Map 混合。
+   可以添加详细的颜色，例如织物中的线。  
+   用来添加在上面基本贴图或法线贴图中无法捕获的细节。  
+   Unity 使用叠加模式将此贴图与 Surface Base Map 混合。
 3. Normal Map 法线贴图：  
    选择包含法线矢量数据的纹理。用一个法线贴图添加表面细节，如凹凸、划痕和凹槽。
 

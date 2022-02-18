@@ -1,0 +1,104 @@
+# 1-1 Unity 中类、对象 & 接口
+
+> 注意：
+>
+> - 变量、分支、循环等基础语法，不再开视频讲解，需要的自行学习，推荐菜鸟教程这样的简单文档即可
+> - 本系列中讲述的 C# 主要针对 Unity 开发，而非 .net 桌面或 web 开发，请小伙伴们选好方向，不要搞错了 1
+
+## 1. Unity 中使用类
+
+### 1.1 新建类
+
+通常来说，新手在 Unity 中新建的脚本就是一个类
+
+> 注意：
+>
+> - 类名要符合命名规则（Camel 命名法，只能是英文、下滑线或数字的组合，且不能以数字开头）
+> - 类名必须和文件名相同，否则 Unity 不认，无法加载该类
+
+visual studio 中新建类不同版本看到的界面不同，主要看当前安装了那些模板
+
+![](../../../imgs/vsnew.png)
+
+如果有些你需要的模板并未安装，可以使用联机搜索，安装需要的模板
+
+![](../../../imgs/vsnew01.png)
+
+或者不适用 unity 安装 vs ，自行选择企业版 Enterprise，并安装需要的功能模块，下载链接 https://visualstudio.microsoft.com/zh-hans/vs/
+
+![](../../../imgs/vsdown.png)
+
+```C#
+//命名空间引用，不必要的可以删掉
+//不加命名空间的话，需要写类的全名
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class NewBehaviourScript : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+}
+
+```
+
+### 1.2 命名空间 namespace
+
+类似于 java 中的 包 Package ，只是为了避免类名互相冲突，添加的一个所属地名称。
+
+比如，北京.张三 和 南京.张三 ，前面的所属地就是命名空间
+
+命名空间可以有多层，中间用 . 号隔开
+
+类的全名：所有的命名空间名.类名，如果不写命名空间引用的话，就必须在使用类时，使用全名
+
+> 注意：
+>
+> - 如果在同一个代码文件中使用同名的不同类，就需要使用类的全名加以区分
+> - 另外，使用反射 reflection 时，一般也需要写类的全名
+
+```C#
+namespace 命名空间名称
+{
+    类代码...
+
+}
+```
+
+### 1.3 Unity 脚本
+
+1. MonoBehavior 派生类脚本
+
+- 在游戏中可以作为组件 Component 使用，挂接在 GameObject 上，实现游戏对象的各种功能
+- 生命周期方法多，对象体量较大
+- 一般用来实现游戏对象上的功能，每个游戏对象需要生成单独的实例相对应
+- 可以直接使用 Unity 的序列化
+- 可以直接访问 Unity 项目资源
+
+2. ScriptableObjcet 派生类脚本
+
+- 多用作保存数据，可以在多个游戏对象中共享
+- 仅有少量生命周期方法，对象体量较小
+- 可以直接使用 Unity 的序列化
+- 可以直接访问 Unity 项目资源
+
+3. 自定义类、结构体、接口的脚本
+
+- 功能很纯粹，只是为了构建类库体系，实现软件架构（小型项目可以不使用，中大型项目，需要构建程序架构时，就必不可少了）
+- 不包含任何 unity 游戏对象的生命周期，无法使用 Unity 的游戏回调函数
+- 无法直接访问 Unity 项目资源
+- 不可直接使用 Unity 的序列化
+
+4. 派生自其他 Unity 类或接口
+
+5. 派生自第三方类或接口
