@@ -38,7 +38,7 @@ URP 和 HDRP 都是 Scriptable Render Pipelines ( SRP )。SRP 是高度可定制
 > 注意：
 >
 > - 内置渲染管线不允许对渲染管线进行自定义编程，只能通过选择不同的 Graphics tiers 图形层 来更改图形质量（共 3 层 Tier 1-3 自低到高）
-> - 内置渲染管线虽不允许对渲染管线进行编程，但可以在图形层中，使用自定义的 Shader 着色器，着色器可以进行自定义开发（直接用代码，不支持使用 shader graph ）
+> - 内置渲染管线虽不允许对渲染管线进行编程，但可以在图形层中，使用自定义的 Shader 着色器，着色器可以进行自定义开发（直接用代码，或者使用 shader graph ）
 > - 使用 C# 对 Shader 进行编程的代码格式称为 High-level shader language (HLSL)，是微软公司对 DirectX 上的 shader 编程语言。（HLSL is the C-like high-level shader language that you use with programmable shaders in DirectX.）
 > - CG 语言是 NVIDIA 的 Shader 开发语言
 > - 另一种对 Shader 进行编程的代码格式是 GLSL 是 OpenGL 着色语言
