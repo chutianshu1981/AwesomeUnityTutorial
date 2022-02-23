@@ -16,6 +16,8 @@ Shader Graph 能够让您直观地构建着色器。您可以在图形框架中�
 
 使用 Shader Graph 可以极大地降低 Shader 开发的难度，对于没有 Shader 编程开发经验的初学者，以及非程序员非常友好。
 
+Shader 可以用于渲染管线，也可以用于制作特效。
+
 下图中使用了 Shader Graph 创建的着色器，请看效果：
 
 ![](../imgs/shaders-example.png)
@@ -58,11 +60,11 @@ Unity Engine 2018.x 上的 Shader Graph 包版本为预览版，不接受错误�
 
 - Shader Graph 工具栏 (1): 是您保存着色器资源的地方。
 
-* Blackboard 黑板(2): 包含可供使用此着色器创建材质所使用的属性。可以在此处对图表中的属性和关键字进行定义、排序和分类。在 Blackboard 中，您还可以编辑所选 Shader Graph Asset 或 Sub Graph 的路径。
+* Blackboard 黑板(2): 包含可供使用此着色器创建材质所使用的属性（可以在 Unity 的 Inspector 窗口中进行值配置）。可以在此处对图表中的属性和关键字进行定义、排序和分类。在 Blackboard 中，您还可以编辑所选 Shader Graph Asset 或 Sub Graph 的路径。
 * 工作区 (3): 将在其中创建着色器的节点图。
 * Main Preview 主预览窗口 (4): 将为您提供着色器外观及其行为方式的实时更新。
 * Graph Inspector 图形检查器窗口 (5): 将显示您选择的任何节点的当前设置、属性和值。
-* Master Stack 主堆栈 (6): 是定义着色器最终表面外观的着色器图的终点，一个 Shader 中有且只有一个。它列出了顶点着色器和片段着色器的主要着色器属性，并为您提供了插入必要值的末端节点。
+* Master Stack 主堆栈 (6): 是定义着色器最终表面外观的着色器图的终点，一个 Shader 中有且只有一个。它列出了顶点着色器和片段（片元）着色器的主要着色器属性，并为您提供了插入必要值的末端节点。
 * Internal Inspector：包含与用户当前单击的任何内容相关的信息的区域。这是一个默认情况下自动隐藏的窗口，只有在选择了用户可以编辑的内容时才会出现。使用内部检查器显示和修改属性、节点选项和图形设置。
 
 ![](../imgs/SG_Inspector.png)
@@ -79,11 +81,12 @@ Unity Engine 2018.x 上的 Shader Graph 包版本为预览版，不接受错误�
 
 虽然不同的 Shader ，需要使用不同的编写方式，但在使用 Shader Graph 编辑 Shader，大体上都会遵循下面的步骤：
 
-1. 创建一个新节点：
-2. 连接节点：
-3. 配置节点，更改节点输出
-4. 保存图表
-5. 创建材质，选择编辑好的 Shader，并挂接到游戏对象，这一步，也可以放到第二步，这样可以随时在 Unity 中观察 Shader 在游戏对象上的效果
+1. 创建节点；
+2. 配置节点；
+3. 连接节点：
+4. 输出结果到主堆栈（Master Stack）
+5. 保存图表
+6. 创建材质，选择编辑好的 Shader，并挂接到游戏对象，这一步，也可以放到第二步，这样可以随时在 Unity 中观察 Shader 在游戏对象上的效果
 
 ## 6. Node 节点
 
@@ -109,6 +112,51 @@ Shader Graph 中和新元素是 Node 节点，每种节点功能各不相同。
 
 在此无法一一细说，就像类库中的类一样，用到时再讲
 
+## 7. 主堆栈 Master Stack
+
+### 7.1 主堆栈
+
+主堆栈是定义着色器最终表面外观的着色器图的终点，一个 Shader Graph 中 有且只有一个。
+
+![](../imgs/sg_mainStack.png)
+
+主堆栈的内容可能会根据您选择的图表设置而改变，主堆栈由包含 Block Node 块节点的上下文 Context 组成
+
+### 7.2 Context 上下文
+
+主堆栈包含两个上下文：顶点 Vetext 和片段(片元) Fragment 。这些代表着色器的两个阶段。
+
+连接到顶点上下文中块的节点成为最终着色器顶点函数的一部分。您连接到片段上下文中的块的节点成为最终着色器的片段（或像素）函数的一部分。
+
+如果您将任何节点连接到两个上下文，它们将执行两次，一次在顶点函数中，然后再次在片段函数中。您不能剪切、复制或粘贴上下文。
+
+![](../imgs/MasterStack_Empty.png)
+
+### 7.3 Block Node 块节点
+
+块节点是主堆栈的特定类型的节点。Block Node 表示 Shader Graph 在最终着色器输出中使用的单个表面（或顶点）描述数据。
+
+特定于某个渲染管道的 Block Node 块节点仅可用于该管道，例如，Universal Block 节点仅适用于 Universal Render Pipeline (URP)，High Definition Block 节点仅适用于 High Definition Render Pipeline (HDRP)。
+
+## 8. 示例中用到的节点
+
+配套视频教程中，制作了一个散发着流动微光的透明 Shader，其中用到的节点，在下面一一介绍一下
+
+### 8.1 Gradient Noise Node 梯度噪声节点
+
+此节点属于代码生成类节点（Procedural），其特点是，用于 Shader 的数据来自于代码（算法）生成。
+
+根据输入 UV（Vector2 类型值）生成梯度或 Perlin 噪声。生成噪声的比例由输入 Scale 控制。
+
+梯度噪声产生的纹理具有连续性，所以经常用来模拟<font color=red>山脉、云朵、水</font>等具有连续性（波状）的物质，该类噪声的典型代表是 Perlin Noise。
+
+其它梯度噪声还有 Simplex Noise 和 Wavelet Noise，它们也是由 Perlin Noise 演变而来。
+
+> 注意：  
+> 学习这些和较为复杂算法相关的节点时，不需要把注意力放在算法上，只需要记住节点的用途即可，也就是节点能做出的效果。
+
+> 扩展阅读：[图形噪声](https://huailiang.github.io/blog/2021/noise/)
+
 <br>
 
 <hr>
@@ -119,6 +167,8 @@ Shader Graph 中和新元素是 Node 节点，每种节点功能各不相同。
 > - [官方文档-着色器](https://docs.unity3d.com/cn/current/Manual/Shaders.html)
 > - [创意核心教程-初学 ShaderGraph](https://learn.unity.com/tutorial/get-started-with-shader-graph)
 > - [Shader Graph 官方文档](https://docs.unity3d.com/Packages/com.unity.shadergraph@14.0/manual/index.html)
+> - [图形噪声](https://huailiang.github.io/blog/2021/noise/)
+> - [Unity 之 ShaderGraph Procedural 节点解析汇总](https://blog.csdn.net/Czhenya/article/details/119900293)
 
 配套视频教程：
 [https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912](https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912)

@@ -65,6 +65,11 @@ URP 和 HDRP 都是 Scriptable Render Pipelines ( SRP )。SRP 是高度可定制
 
 ![](../imgs/BestPracticeLightingPipeline16.svg)
 
+> 参考资料：
+>
+> - [解释基本的 3D 理论](https://developer.mozilla.org/zh-CN/docs/Games/Techniques/3D_on_the_web/Basic_theory)
+> - [图形管线](https://juejin.cn/post/6844904069543247880)
+
 <br>
 <hr>
 <br>
