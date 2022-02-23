@@ -96,6 +96,8 @@ Shader Graph 中和新元素是 Node 节点，每种节点功能各不相同。
 
 每个节点都包含多个端口 Port，每个端口都有确定的数据类型，这些 Port 端口可以用来输入（在节点左侧）、输出（在节点右侧）。
 
+![](../imgs/mult_node.png)
+
 通过 边 Edge 可以将节点连接起来，组成完整的 Shader Graph。
 
 只有一个 Edge 可以连接到任何输入端口，但多个 Edge 可以连接到输出端口。
@@ -152,8 +154,14 @@ Shader Graph 中和新元素是 Node 节点，每种节点功能各不相同。
 
 其它梯度噪声还有 Simplex Noise 和 Wavelet Noise，它们也是由 Perlin Noise 演变而来。
 
-> 注意：  
-> 学习这些和较为复杂算法相关的节点时，不需要把注意力放在算法上，只需要记住节点的用途即可，也就是节点能做出的效果。
+下图显示了各种不同的噪声算法对应的灰度图：
+
+![](../imgs/noise3.jpg)
+
+> 注意：
+>
+> - 学习这些和较为复杂算法相关的节点时，不需要把注意力放在算法上，只需要记住节点的用途即可，也就是节点能做出的效果。
+> - 学习 Shader Graph 注重积累，学习过程更像是背单词，一类 Shader 效果对应一套流程；学这个不是靠原理和逻辑，更多是经验的积累，由量变到质变
 
 > 扩展阅读：[图形噪声](https://huailiang.github.io/blog/2021/noise/)
 
@@ -169,6 +177,7 @@ Shader Graph 中和新元素是 Node 节点，每种节点功能各不相同。
 > - [Shader Graph 官方文档](https://docs.unity3d.com/Packages/com.unity.shadergraph@14.0/manual/index.html)
 > - [图形噪声](https://huailiang.github.io/blog/2021/noise/)
 > - [Unity 之 ShaderGraph Procedural 节点解析汇总](https://blog.csdn.net/Czhenya/article/details/119900293)
+> - [Gabriel Aguiar Prod. 特效教程](https://www.youtube.com/c/GabrielAguiarProd/videos)
 
 配套视频教程：
 [https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912](https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912)
