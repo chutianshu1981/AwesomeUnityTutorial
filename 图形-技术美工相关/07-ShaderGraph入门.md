@@ -217,6 +217,22 @@ Shader Graph 中和新元素是 Node 节点，每种节点功能各不相同。
 
 - out ：输入值根据输入输出值范围，重新映射后，得到的值
 
+### 8.6 时间节点 Time Node
+
+该节点属于 Input - Basic 分类，所以是一种基础的数据输入类节点，用来提供随时间变化的动态值，作为其他节点的输入
+
+该节点是 Shader Graph 中，实现动态效果的不二之选。
+
+![](../imgs/sg_time_node.png)
+
+```C#
+float Time_Time = _Time.y; // 随时间增大的浮点值
+float Time_SineTime = _SinTime.w;//正弦时间，随时间在（-1，1）之间变化
+float Time_CosineTime = _CosTime.w;//余弦时间
+float Time_DeltaTime = unity_DeltaTime.x;//当前帧时间，从前一帧，到后一帧所用的时间
+float Time_SmoothDelta = unity_DeltaTime.z;//平滑后的当前帧时间
+```
+
 <br>
 
 <br>
