@@ -45,6 +45,10 @@ Unity Engine 2018.x 上的 Shader Graph 包版本为预览版，不接受错误�
 
 ![](../imgs/create_shader_graph.png)
 
+这会在指定文件夹下，生成一个后缀名为 .shadergraph 的文件，保存 Shader 的信息。
+
+![](../imgs/sgFile.png)
+
 可用的 Shader Graph 类型取决于项目中存在的渲染管道。根据渲染管道，某些选项可能存在也可能不存在。所以如果到了 HDRP 项目中，肯定和上面截图中不同，不会有 URP 选项，而是换成 HDRP。
 
 不过，以下选项始终可用：
@@ -148,7 +152,9 @@ Shader Graph 中和新元素是 Node 节点，每种节点功能各不相同。
 
 此节点属于代码生成类节点（Procedural），其特点是，用于 Shader 的数据来自于代码（算法）生成。
 
-根据输入 UV（Vector2 类型值）生成梯度或 Perlin 噪声。生成噪声的比例由输入 Scale 控制。
+![](../imgs/sg_g_noise_node.png)
+
+根据输入 UV（float2 类型值）生成梯度或 Perlin 噪声。生成噪声的比例由输入 Scale 控制，Scale 值越大，噪声斑纹越小。
 
 梯度噪声产生的纹理具有连续性，所以经常用来模拟<font color=red>山脉、云朵、水</font>等具有连续性（波状）的物质，该类噪声的典型代表是 Perlin Noise。
 
@@ -158,12 +164,64 @@ Shader Graph 中和新元素是 Node 节点，每种节点功能各不相同。
 
 ![](../imgs/noise3.jpg)
 
+> 扩展阅读：[图形噪声](https://huailiang.github.io/blog/2021/noise/)
+
+### 8.2 属性节点 Property Node
+
+属性节点，就是 Blackboard 黑板 中创建的属性值节点，使用步骤：
+
+1. 在 Blackboard 中创建属性；  
+   ![](../imgs/propertyNode01.png)
+2. 将属性拖拽到 Shader 里，用于输入；  
+   ![](../imgs/propertyNode03.png)
+3. 在 Shader Editor 的 Graph Inspector 的 Node Settings 中，可以对属性设置进行更改  
+   ![](../imgs/propertyNode02.png)
+4. 在 unity Inspector 中，可以随时更改属性值  
+   ![](../imgs/propertyNode04.png)
+
+### 8.3 算术节点 Math Node
+
+顾名思义，是用作算术运算的节点，比如最基础的加减乘除
+
+本节例子中，用到了乘法 Multiply 和除法 Divide
+
+![](../imgs/mathnode.png)
+
+### 8.4 平铺和偏移节点 Tilling and Offset Node
+
+为 UV 输入，提供平铺和偏移设置，输出新的处理过的 UV。
+
+- 平铺 Tilling ：一个 float2 （x,y）类型的值，默认 x=1,y=1 表示保持原始大小。X=0.5，y=0.5，表示在原先一个单位区域，现在只能放下 1/4，纹理会被拉伸；x=2,y=2，表示原先一个单位空间，将放入 4 个，纹理会被缩小
+- 偏移 Offset ：一个 float2 值（x,y），设置通道的偏移量，默认 x= 0,y=0。设置后，会在指定坐标轴产生偏移。
+
+这通常用于细节贴图和随时间滚动的纹理。
+
+![](../imgs/sg_T&O_node.png)
+
+### 8.5 重映射节点 Remap Node
+
+将输入的值映射到另一个范围之中，如下图是将 -1~1 映射到 0~1
+
+![](../imgs/sg_remap_node.png)
+
+左侧输入：
+
+- In ：输入的值
+- In Min Max ：输入值的范围
+- Out Min Max : 输出值的范围
+
+右侧输出：
+
+- out ：输入值根据输入输出值范围，重新映射后，得到的值
+
+<br>
+
+<br>
+
 > 注意：
 >
 > - 学习这些和较为复杂算法相关的节点时，不需要把注意力放在算法上，只需要记住节点的用途即可，也就是节点能做出的效果。
 > - 学习 Shader Graph 注重积累，学习过程更像是背单词，一类 Shader 效果对应一套流程；学这个不是靠原理和逻辑，更多是经验的积累，由量变到质变
-
-> 扩展阅读：[图形噪声](https://huailiang.github.io/blog/2021/noise/)
 
 <br>
 
