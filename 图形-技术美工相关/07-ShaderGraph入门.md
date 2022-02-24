@@ -233,6 +233,18 @@ float Time_DeltaTime = unity_DeltaTime.x;//当前帧时间，从前一帧，到�
 float Time_SmoothDelta = unity_DeltaTime.z;//平滑后的当前帧时间
 ```
 
+### 8.7 分支节点 Branch Node
+
+类似于 if 判断语句，当 Predicate 为真时，输出的值是 True 输入端口的值；当 Predicate 为假时，输出值等于 False 输入端口对应的值
+
+![](../imgs/sg_Branch_Node.png)
+
+### 8.8 Step Node
+
+如果输入 In 的值大于或等于输入 Edge 的值，则返回 1 ，否则返回 0。
+
+![](../imgs/sg_step_node.png)
+
 <br>
 
 <br>
