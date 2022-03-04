@@ -75,7 +75,7 @@ namespace 命名空间名称
 }
 ```
 
-### 1.3 Unity 脚本
+### 1.3 Unity 脚本分类
 
 1. MonoBehavior 派生类脚本
 
