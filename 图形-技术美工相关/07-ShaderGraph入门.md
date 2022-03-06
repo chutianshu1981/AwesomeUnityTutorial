@@ -267,6 +267,7 @@ float Time_SmoothDelta = unity_DeltaTime.z;//平滑后的当前帧时间
 > - [图形噪声](https://huailiang.github.io/blog/2021/noise/)
 > - [Unity 之 ShaderGraph Procedural 节点解析汇总](https://blog.csdn.net/Czhenya/article/details/119900293)
 > - [Gabriel Aguiar Prod. 特效教程](https://www.youtube.com/c/GabrielAguiarProd/videos)
+> - [How to Use All 200+ Nodes in Unity Shader Graph youtube](https://www.youtube.com/watch?v=84A1FcQt9v4)
 
 配套视频教程：
 [https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912](https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912)
