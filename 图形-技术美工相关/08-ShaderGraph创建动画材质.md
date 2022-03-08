@@ -10,11 +10,11 @@
 
 场景中的 Mesh 有五种类型的空间：
 
-Object 对象：相对于对象 mesh 枢轴的顶点位置。
-View 视图：相对于相机的顶点位置。
-World ：相对于世界原点的顶点位置。返回选定的 Scriptable Render Pipeline 的默认世界空间。
-Tangent 切线：解决一些特殊用例，例如逐像素照明。
-Absolute 绝对世界: 始终返回场景中所有可编写脚本渲染管线的对象的绝对世界位置，URP 的默认选项
+- Object 对象：相对于对象 mesh 枢轴的顶点位置。
+- View 视图：相对于相机的顶点位置。
+- World ：相对于世界原点的顶点位置。返回选定的 Scriptable Render Pipeline 的默认世界空间。
+- Tangent 切线：解决一些特殊用例，例如逐像素照明。
+- Absolute 绝对世界: 始终返回场景中所有可编写脚本渲染管线的对象的绝对世界位置，URP 的默认选项
 
 ## 2. 使用 Mask 限制移动
 
