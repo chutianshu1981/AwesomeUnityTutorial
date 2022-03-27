@@ -129,31 +129,15 @@ namespace 命名空间名称
 
 ## 3. 结构 Struct
 
-## 4. C# 值类型 Value Type 和引用类型 Reference Type
+结构类型（或结构类型）是一种可以封装数据和相关功能的值类型。
 
-### 4.1 概念
 
-值类型中，存储的是它的数值；而引用类型中，存的是指向它真实数据的地址
+| 不同之处 | Struct                          | Class                        |
+| -------- | ------------------------------- | ---------------------------- |
+| 数值类型 | 值类型                          | 引用类型                     |
+| 内存空间 | Stack 上                        | Heap 上                      |
+| 继承方式 | 只能实现 Interface              | 可继承类，也可实现 Interface |
+| NULL     | 不能 NULL，内部数值不赋值都为 0 | 可以 NULL                    |
 
-### 4.2 分类
 
-- C# 中的值类型有： 基本数据类型、enum、struct
-- 引用类型有：class、Object、interface；另外常用的有 array 和 string
 
-![](../../../imgs/Cs_valuetype_referencetype.png)
-
-### 4.3 赋值
-
-- 值类型赋值，是 copy。即值的拷贝
-- 引用类型赋值，是 引用。传递的是地址
-
-```C#
-Student stu1 = new Student("小明",19);
-Student stu2 = stu1;
-stu1.Age=20;
-Debug.Log(stu2.Age);
-```
-
-### 4.4 ref 引用关键字
-
-## 5. 接口 Interface
