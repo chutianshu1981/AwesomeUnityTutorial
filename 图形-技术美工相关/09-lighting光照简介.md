@@ -40,6 +40,9 @@ Unity 中光照的工作方式类似于光在现实世界中的情况。Unity �
 * strength / intensity ：强度影响光传播的远近，以及亮度 
 
 
+
+
+
 > 参考资料：
 > 
 > * [lighting unity 官方文档](https://docs.unity3d.com/cn/2022.1/Manual/LightingOverview.html)
