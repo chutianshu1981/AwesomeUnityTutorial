@@ -33,11 +33,6 @@ Unity 中光照的工作方式类似于光在现实世界中的情况。Unity �
 
 发光物体就是光源
 
-* 实时光照 Realtime Lighting：实时光照是 Unity 在运行时计算光照。
-* 烘焙光照 Baked Lighting：Unity 提前执行光照计算并将结果保存为光照数据，然后在运行时应用。
-* 混合光照 Mixed Lighting：实时光照和烘焙光照 两者的混合
-
-
 ### 2.1 光源的三个核心属性
 
 * Shape ： 形状影响光发射的方向 direction
@@ -88,7 +83,8 @@ Scene 选项卡分为几个部分：
 2.  Lighting Settings：
    光照设置信息，包括实时光照、混合光照、光照贴图、自动生成等   
     实时光照、混合光照 较为简单，就是设置场景光照模式  
-    较为复杂的是 光照贴图设置：
+    <br>
+    较为复杂的是 光照贴图 设置 lightmapping setting ：
     * Lightmap Resolution 光照贴图解决方案：  
     指定每单位用于光照贴图的纹素(texel)数。增加此值可提高光照贴图质量，但也会增加烘焙时间。请注意，将该值加倍会使纹素的数量增加四倍，因为它决定了光照贴图的高度和宽度。
     * Lightmap Padding 光照贴图填充：  
