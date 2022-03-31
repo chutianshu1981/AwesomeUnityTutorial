@@ -75,16 +75,13 @@ Scene 选项卡显示有关分配给活动场景光照设置资源的信息。�
 
 场景光照设置，是一个在 Assets 中的文件，可以新建和更换
 
-Scene 选项卡分为几个部分：
+Scene 选项卡分为几个部分：  
+光照设置信息，包括实时光照、混合光照、光照贴图、自动生成等   
 
 1. Lighting Settings Asset controls：  
    新建或选择不同的光照配置文件，将光照设置资源分配给活动（当前）场景
 
-2.  Lighting Settings：
-   光照设置信息，包括实时光照、混合光照、光照贴图、自动生成等   
-    实时光照、混合光照 较为简单，就是设置场景光照模式  
-    <br>
-    较为复杂的是 光照贴图 设置 lightmapping setting ：
+2.  Lightmapping Settings：
     * Lightmap Resolution 光照贴图解决方案：  
     指定每单位用于光照贴图的纹素(texel)数。增加此值可提高光照贴图质量，但也会增加烘焙时间。请注意，将该值加倍会使纹素的数量增加四倍，因为它决定了光照贴图的高度和宽度。
     * Lightmap Padding 光照贴图填充：  
@@ -124,6 +121,13 @@ Scene 选项卡分为几个部分：
    如果启用了自动生成，Unity 会在您更改场景时自动预计算照明数据。该数据包括 Baked Global Illumination 系统的光照贴图、Enlighten Realtime Global Illumination 系统、Light Probes 和 Reflection Probes 的数据。  
    Unity 通常在您更改场景后几秒钟开始烘焙。如果禁用自动生成，您必须自己手动调用烘焙，使用 Lighting 窗口中的Generate Lighting按钮，或者Lightmapping.Bake或Lightmapping.BakeAsync API。  
    请注意，当您使用Auto Generate预先计算照明数据时，预先计算的照明数据不会作为资产存储在您的项目中。相反，它存储在内存中，并作为场景的一部分进行序列化。
+5. Mixed Lighting 混合光照：  
+   * Baked Indirect 烘焙间接光:    
+  将实时直接光照与烘焙间接光照相结合。它提供实时阴影。此光照模式提供逼真的光照和合理的阴影保真度，适用于中档硬件。
+   * Shadowmask 阴影遮罩:  
+  将实时直接照明与烘焙间接照明相结合。它可以为远处提供烘焙阴影游戏对象，并自动将它们与实时阴影混合。它是最现实的，也是最耗费资源的光照模式。您可以使用质量设置来配置其性能和视觉保真度。此照明模式适用于高端或中档硬件。
+   * Subtractive 减法:  
+  提供烘焙的直接和间接照明。它只为一个定向光渲染直接实时阴影。此光照模式不提供特别逼真的光照效果，适用于风格化艺术或低端硬件。
 
 #### 2.3.2 Environment 分页
 
@@ -162,6 +166,8 @@ Scene 选项卡分为几个部分：
   最终反射到传感器中的所有其他光，例如多次撞击表面的光以及当您不直接看太阳时来自天空的光  
   ![](../imgs/CC_Light_Graphic_5.png)
 ### 2.5 光照模式 Mode
+
+光源设置中的 Mode
 
 * 烘培光照 Baked ：  
    烘焙光照是指 Unity 提前执行光照计算并将结果保存为光照数据，然后在运行时应用。合理使用烘焙光照，可以节省较多资源，降低游戏要求的硬件配置。
