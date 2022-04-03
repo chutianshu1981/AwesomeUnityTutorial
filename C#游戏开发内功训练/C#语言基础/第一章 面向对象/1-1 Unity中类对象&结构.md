@@ -120,7 +120,42 @@ namespace 命名空间名称
 * 方法：类似于 C、JavaScript 中的函数，其中可以包含多条语句，通过方法名可以调用执行；
 * 构造方法：特殊的方法，用来初始化类中字段（数据），如果不写，系统默认生成一个空构造方法，如果写了带参数的，系统就不再提供空构造方法，需要自己手动添加。
 
+``` C#
+using UnityEngine;
+namespace Assets._Scripts.Entity
+{
+    //创建类基本格式：
+    // 访问修饰符 <可选修饰符，比如 abstract 、final 等> class 类名  {  .....类结构代码  }
+     public  class Student
+    {
+        //数据成员，描述其物理特征
 
+        //字段 attribute
+        private int id;
+        
+        //属性 Property
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        
+        //字段
+        private string name;
+        //属性
+        public string Name { get => name; set => name = value; }
+
+        //最简写法，省略字段，只写属性，C#会自动根据该属性生成对应的私有字段
+        public int Age { get; set; }
+
+        //方法成员，描述它的动作
+        public void Print() {
+            Debug.Log($"当前学生的 id = {this.id} , 名字：{this.name}");
+        }
+    }
+}
+```
 ## 2. 对象 Object
 
 ### 2.1 万物皆对象
