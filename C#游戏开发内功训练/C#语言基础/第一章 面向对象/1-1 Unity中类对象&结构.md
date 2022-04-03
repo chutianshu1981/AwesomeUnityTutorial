@@ -126,13 +126,14 @@ namespace Assets._Scripts.Entity
 {
     //创建类基本格式：
     // 访问修饰符 <可选修饰符，比如 abstract 、final 等> class 类名  {  .....类结构代码  }
-     public  class Student
+    [Serializable]
+    public class Student
     {
         //数据成员，描述其物理特征
-
+        [SerializeField]
         //字段 attribute
         private int id;
-        
+
         //属性 Property
         public int Id
         {
@@ -140,15 +141,26 @@ namespace Assets._Scripts.Entity
             set { id = value; }
         }
 
-        
+
+        [SerializeField]
         //字段
         private string name;
         //属性
         public string Name { get => name; set => name = value; }
 
+       
         //最简写法，省略字段，只写属性，C#会自动根据该属性生成对应的私有字段
         public int Age { get; set; }
 
+
+        //带全参的构造方法
+        public Student(int id, string name, int age) { 
+            this.id = id;
+            this.name = name;
+            this.Age = age;
+        }
+
+        public Student() { }
         //方法成员，描述它的动作
         public void Print() {
             Debug.Log($"当前学生的 id = {this.id} , 名字：{this.name}");
