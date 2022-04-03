@@ -101,14 +101,13 @@ namespace 命名空间名称
 - 不包含任何 unity 游戏对象的生命周期，无法使用 Unity 的游戏回调函数
 - 无法直接访问 Unity 项目资源
 
-如果想要进行 inspector 中的字段展示，只加 public 不行，为类添加可序列化注解：[Serializable]，还必须为要暴露的字段添加序列化注解：[SerializeField]
-
 4. 派生自其他 Unity 类或接口
 
 5. 派生自第三方类或接口
 
 > 注意：
-> * 使用自定义类，无法使用 Unity 中的序列化，即无法直接在 inspector 中编辑自定义类的值。
+> * 如果想要进行 inspector 中的字段展示，只加 public 不行，为类添加可序列化注解：[Serializable]，还必须为要暴露的字段添加序列化注解：[SerializeField]
+
 
 ![](../../../imgs/网络应用简图.png)
 
