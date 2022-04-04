@@ -79,30 +79,95 @@ namespace 命名空间名称
 
 1. MonoBehavior 派生类脚本
 
-- 在游戏中可以作为组件 Component 使用，挂接在 GameObject 上，实现游戏对象的各种功能
-- 生命周期方法多，对象体量较大
-- 一般用来实现游戏对象上的功能，每个游戏对象需要生成单独的实例相对应
-- 可以直接使用 Unity 的序列化
-- 可以直接访问 Unity 项目资源
+    在游戏中可以作为组件 Component 使用，挂接在 GameObject 上，实现游戏对象的各种功能
+
+   - 生命周期方法多，对象体量较大
+   - 一般用来实现游戏对象上的功能，每个游戏对象需要生成单独的实例相对应
+   - 可以直接使用 Unity 的序列化
+   - 可以直接访问 Unity 项目资源
 
 2. ScriptableObjcet 派生类脚本
 
-- 多用作保存数据，可以在多个游戏对象中共享
-- 仅有少量生命周期方法，对象体量较小
-- 可以直接使用 Unity 的序列化
-- 可以直接访问 Unity 项目资源
+    该类对象，可以序列化为资源文件，充当数据来使用；而这个类本身就是数据的模板。
+
+   - 多用作保存数据，可以在多个游戏对象中共享
+   - 仅有少量生命周期方法，对象体量较小
+   - 可以直接使用 Unity 的序列化
+   - 可以直接访问 Unity 项目资源
 
 3. 自定义类、结构体、接口的脚本
 
 - 功能很纯粹，只是为了构建类库体系，实现软件架构（小型项目可以不使用，中大型项目，需要构建程序架构时，就必不可少了）
 - 不包含任何 unity 游戏对象的生命周期，无法使用 Unity 的游戏回调函数
 - 无法直接访问 Unity 项目资源
-- 不可直接使用 Unity 的序列化
 
 4. 派生自其他 Unity 类或接口
 
 5. 派生自第三方类或接口
 
+> 注意：
+> * 如果想要进行 inspector 中的字段展示，只加 public 不行，为类添加可序列化注解：[Serializable]，还必须为要暴露的字段添加序列化注解：[SerializeField]
+
+
+![](../../../imgs/网络应用简图.png)
+
+### 1.4 类的组成
+
+类由数据和操作组成，字段和属性属于数据成员，表示动作、功能的是方法成员
+
+* 字段：类中的数据
+* 属性：对字段的封装，类似于 java 中的取值器、赋值器
+* 方法：类似于 C、JavaScript 中的函数，其中可以包含多条语句，通过方法名可以调用执行；
+* 构造方法：特殊的方法，用来初始化类中字段（数据），如果不写，系统默认生成一个空构造方法，如果写了带参数的，系统就不再提供空构造方法，需要自己手动添加。
+
+``` C#
+using UnityEngine;
+namespace Assets._Scripts.Entity
+{
+    //创建类基本格式：
+    // 访问修饰符 <可选修饰符，比如 abstract 、final 等> class 类名  {  .....类结构代码  }
+    [Serializable]
+    public class Student
+    {
+        //数据成员，描述其物理特征
+        [SerializeField]
+        //字段 attribute
+        private int id;
+
+        //属性 Property
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+
+        [SerializeField]
+        //字段
+        private string name;
+        //属性
+        public string Name { get => name; set => name = value; }
+
+       
+        //最简写法，省略字段，只写属性，C#会自动根据该属性生成对应的私有字段
+        public int Age { get; set; }
+
+
+        //带全参的构造方法
+        public Student(int id, string name, int age) { 
+            this.id = id;
+            this.name = name;
+            this.Age = age;
+        }
+
+        public Student() { }
+        //方法成员，描述它的动作
+        public void Print() {
+            Debug.Log($"当前学生的 id = {this.id} , 名字：{this.name}");
+        }
+    }
+}
+```
 ## 2. 对象 Object
 
 > 参考资料：
@@ -117,6 +182,10 @@ namespace 命名空间名称
 例如，拖抓到 hierarchy 窗口中的那些元素，每个都会生成一个对应的 GameObject 类的对象，而在每个游戏对象中添加的组件，都是 Component 类对象
 
 包括我们书写脚本所继承的 MonoBehavior ，也是间接继承自 Component 类（Component - Behavior - MonoBehaviour ），所以我们自己编写的脚本类，也会实例化为组件对象后，再加载到内存中
+
+如下图，类就是模具，对象就是用类作为模具制作出的实物
+
+![](../../../imgs/类对象关系.png)
 
 ### 2.2 对象实例化
 
@@ -134,31 +203,38 @@ namespace 命名空间名称
 
 ## 3. 结构 Struct
 
-## 4. C# 值类型 Value Type 和引用类型 Reference Type
+结构类型（或结构类型）是一种可以封装数据和相关功能的值类型。
 
-### 4.1 概念
 
-值类型中，存储的是它的数值；而引用类型中，存的是指向它真实数据的地址
+| 不同之处 | Struct                          | Class                        |
+| -------- | ------------------------------- | ---------------------------- |
+| 数值类型 | 值类型                          | 引用类型                     |
+| 内存空间 | Stack 上                        | Heap 上                      |
+| 继承方式 | 只能实现 Interface              | 可继承类，也可实现 Interface |
+| NULL     | 不能 NULL，内部数值不赋值都为 0 | 可以 NULL                    |
 
-### 4.2 分类
 
-- C# 中的值类型有： 基本数据类型、enum、struct
-- 引用类型有：class、Object、interface；另外常用的有 array 和 string
+``` C#
+struct Books
+{
+   private string title;
+   private string author;
+   private string subject;
+   private int book_id;
+   public void setValues(string t, string a, string s, int id)
+   {
+      title = t;
+      author = a;
+      subject = s;
+      book_id =id;
+   }
+   public void display()
+   {
+      Console.WriteLine("Title : {0}", title);
+      Console.WriteLine("Author : {0}", author);
+      Console.WriteLine("Subject : {0}", subject);
+      Console.WriteLine("Book_id :{0}", book_id);
+   }
 
-![](../../../imgs/Cs_valuetype_referencetype.png)
-
-### 4.3 赋值
-
-- 值类型赋值，是 copy。即值的拷贝
-- 引用类型赋值，是 引用。传递的是地址
-
-```C#
-Student stu1 = new Student("小明",19);
-Student stu2 = stu1;
-stu1.Age=20;
-Debug.Log(stu2.Age);
+}; 
 ```
-
-### 4.4 ref 引用关键字
-
-## 5. 接口 Interface
