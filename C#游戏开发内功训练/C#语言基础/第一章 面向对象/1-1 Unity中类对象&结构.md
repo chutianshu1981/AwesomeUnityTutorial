@@ -105,6 +105,11 @@ namespace 命名空间名称
 
 ## 2. 对象 Object
 
+> 参考资料：
+>
+> - [Unity 底层的 C#运行原理](https://juejin.cn/post/7068624157348462628)
+> - [Unity 将来时：IL2CPP 是什么？](https://zhuanlan.zhihu.com/p/19972689)
+
 ### 2.1 万物皆对象
 
 不论 Unity 引擎所使用的 C++ ，以及我们编写程序所使用的 C# ，除了静态类外，其他的类都需要实例化为对象之后，才能在内存中运行。
