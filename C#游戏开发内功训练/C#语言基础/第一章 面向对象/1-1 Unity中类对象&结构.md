@@ -106,7 +106,7 @@ namespace 命名空间名称
 5. 派生自第三方类或接口
 
 > 注意：
-> * 如果想要进行 inspector 中的字段展示，只加 public 不行，为类添加可序列化注解：[Serializable]，还必须为要暴露的字段添加序列化注解：[SerializeField]
+> * 如果想要对自定义的类（不继承MonoBehavior、ScriptableObjcet）进行 inspector 中的字段展示，只加 public 不行，为类添加可序列化注解：[Serializable]，还必须为要暴露的字段添加序列化注解：[SerializeField]
 
 
 ![](../../../imgs/网络应用简图.png)
