@@ -37,3 +37,7 @@ A : 如果排除包缺失错误后（加载完资源包后，没有错误，可�
 
 ### Q：加载一些比较旧的项目时，报错 Unity Deterministic compilation failed 
 A ： Edit→Project Settings → Player -> other setting -> 找到 Use Deterministic Compilation 取消勾选就可以了
+
+### Q: All Compiler errors have to be fixed before you can enter playmode! 代码有错，无法运行游戏（进入游戏模式）  
+A : 这个就是 C# 脚本 中有严重的语法或逻辑错误（语法错误的可能性更大），导致无法编译通过，必须先修改了代码中的错误后，才能在 Unity 中点击 Play 按钮运行游戏。  
+脚本错误，在 Vs 中，通常可以看到具体的错误信息提示，包括错误行数、错误原因等等，一般可以直接找到出错位置，方便改正。 
