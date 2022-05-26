@@ -32,7 +32,7 @@ Select the official high-quality tutorials as the introductory learning content,
 - 以官方资料为主，其他资料为辅
 - 官方教程、官方手册、官方 API 、官方论坛
 - 开源游戏项目
-- unity 2021.X 版本
+- unity 2021.X + 版本，现已升级到 2022
 
 ![](/imgs/unity课程设置.png)
 
