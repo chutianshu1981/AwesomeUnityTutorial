@@ -17,7 +17,7 @@ Select the official high-quality tutorials as the introductory learning content,
 - 只告诉你怎么做，而不告诉为什么要这么做
 - 不考虑知识点的关联和难度递进
 - 知识点不全，且离散
-- 几个系列学完后，虽然都跟着坐下来了，但想要开始做自己的游戏，还是什么都不会
+- 几个系列学完后，虽然游戏都跟着作出来了，但想要开始做自己的游戏，还是什么都不会
 
 **本教程设计原则**：
 
