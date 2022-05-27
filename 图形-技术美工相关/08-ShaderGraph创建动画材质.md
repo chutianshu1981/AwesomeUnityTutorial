@@ -52,9 +52,25 @@
 
 如果对象的位置高于 y 轴上的世界位置 0，则这一系列节点会屏蔽输入。
 
+<br>
+<hr>
+<br>
+
 > 参考资料：
 >
 > - [Position Node 位置节点 官方文档](https://docs.unity3d.com/Packages/com.unity.shadergraph@14.0/manual/Position-Node.html)
 > - [Using Position Data - Shader Graph Basics - Episode 26 | Ben Cloward |
 >   youtube](https://www.youtube.com/watch?v=Rm4ubzc-6Q4)
 > - [Art That Moves: Creating Animated Materials with Shader Graph](https://blog.unity.com/technology/art-that-moves-creating-animated-materials-with-shader-graph)
+
+<br>
+<hr>
+<br>
+
+配套视频教程：
+[https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912](https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912)
+
+文章也同时同步微信公众号，喜欢使用手机观看文章的可以关注
+
+![](../imgs/微信公众号二维码.jpg)
+
