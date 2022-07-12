@@ -1,13 +1,14 @@
 # AwesomeUnityTutorial
 
-> 注意：
-> 提问前，请先查看 [Unity 入门系列 常见 Q&A.md](Unity%20入门系列%20常见%20Q&A.md)
+## 注意：
+## 提问前，请先查看 ：
+## [Unity 入门系列 常见 Q&A.md](Unity%20入门系列%20常见%20Q&A.md)
 
 B 站教程视频系列地址：https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912
 
 精选官方高质量教程作为入门学习内容，选择最优学习路线，让学习过程“如丝般顺滑”；力求做全网最易学，知识最全面的游戏开发教程。
 
-Select the official high-quality tutorials as the introductory learning content, choose the best learning route to make the learning process "smooth as silk"; strive to be the easiest to learn and the most comprehensive game development tutorial
+
 
 ## 0. 特点
 
