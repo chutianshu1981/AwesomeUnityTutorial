@@ -136,3 +136,19 @@ Animation 视图__可用于动画化更多属性，而不仅限于__游戏对象
 * Vector4
 * Quaternion
 * Boolean
+
+> 参考资料：
+>
+> * [CC 动画 教程 官方文档](https://learn.unity.com/tutorial/refine-your-animation)
+> * [Unity 动画曲线 - Unity 官方文档](https://docs.unity3d.com/cn/2022.1/Manual/animeditor-AnimationCurves.html)
+
+<br>
+<hr>
+<br>
+
+配套视频教程：
+[https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912](https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912)
+
+文章也同时同步微信公众号，喜欢使用手机观看文章的可以关注
+
+![](../imgs/微信公众号二维码.jpg)
