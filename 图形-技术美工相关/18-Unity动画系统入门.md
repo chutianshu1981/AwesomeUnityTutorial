@@ -1,5 +1,7 @@
 # Unity 动画系统入门
 
+[本节示例项目 CC_Animation.zip](https://connect-cdn-public-prd.unitychina.cn/h1/20211207/4a61686a-d8dc-4ba3-a45c-f4485407cf35/CC_Animation.zip)
+
 ## 1. Unity 动画系统简介
 
 Unity 有一个丰富而复杂的动画系统（有时称为“Mecanim”）。该系统具有以下功能：
