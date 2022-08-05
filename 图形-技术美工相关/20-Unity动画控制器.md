@@ -112,6 +112,7 @@ Animator Controller 引用了其中使用的动画剪辑，并使用状态机，
 
 
 > 参考资料：
+> * [CC 动画官方教程](https://learn.unity.com/tutorial/control-animation-with-an-animator)
 >
 > * [动画控制器官方文档](https://docs.unity3d.com/2023.1/Documentation/Manual/class-AnimatorController.html)
 > * [动画过渡官方文档](https://docs.unity3d.com/2023.1/Documentation/Manual/class-Transition.html)
