@@ -113,6 +113,25 @@ Animator Controller 引用了其中使用的动画剪辑，并使用状态机，
 
 ![](../imgs/AnimatorTransitionInspectorShowingBlendtreeParams.png)
 
+## 4. Blend Tree 混合树状态过渡
+
+### 概念
+
+Blend Tree 混合树可以平滑混合多个不同的动画片段；通过 Animator Controller 中的参数可以控制混合树中动画片段（不同状态）间的转换
+
+![](../imgs/MecanimBlendTreeStateDiagramCombined.png)
+
+使用动画剪辑和输入参数来设置混合树时，Inspector 窗口通过图形显示动画如何随着参数值变化而进行组合（拖动滑动条时，树根中的箭头会改变其着色以显示其控制的动画剪辑）。
+
+![](../imgs/AnimatorBlendTreeInspectorPreview.jpg)
+
+> 注意：
+> * 为了使混合后的运动合理，要混合的运动必须具有相似的性质和时机。
+> * 混合树是动画状态机中的一种特殊状态类型。
+
+<br>
+<hr>
+<br>
 
 > 参考资料：
 > * [CC 动画官方教程](https://learn.unity.com/tutorial/control-animation-with-an-animator)
@@ -120,3 +139,14 @@ Animator Controller 引用了其中使用的动画剪辑，并使用状态机，
 > * [动画控制器官方文档](https://docs.unity3d.com/2023.1/Documentation/Manual/class-AnimatorController.html)
 > * [动画过渡官方文档](https://docs.unity3d.com/2023.1/Documentation/Manual/class-Transition.html)
 > * [状态机转换中断----官方博客文章](https://blog.unity.com/technology/wait-ive-changed-my-mind-state-machine-transition-interruptions)
+
+<br>
+<hr>
+<br>
+
+配套视频教程：
+[https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912](https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912)
+
+文章也同时同步微信公众号，喜欢使用手机观看文章的可以关注
+
+![](../imgs/微信公众号二维码.jpg)
