@@ -35,6 +35,23 @@ Animator Controller 引用了其中使用的动画剪辑，并使用状态机，
 * Write Defaults（写入默认值）：AnimatorStates 是否为不通过其运动设置动画的属性写入默认值。
 * Transitions（过渡）：源自此状态的转换列表。
 
+### 子状态机  Sub-State Machine
+
+虽然叫子状态机，实际上的作用是一个状态机的包，可以内部包含多个状态机
+
+和普通的状态机相比，它是六边形的：
+
+![](../imgs/MecanimSubStateMachine.png)
+
+子状态机只是一种在编辑器中直观地折叠一组状态的方式，因此在过渡到子状态机时，必须选择要连接到子状态机的哪个状态。
+
+![](../imgs/MecanimSelectSubState.png)
+
+子状态机中有一个名称以 Up 开头的额外状态,Up 状态表示“外部世界”，也就是上一层
+
+![](../imgs/MecanimSubStateUp.png)
+
+
 ## 3. Animation Transaction 动画过渡
 
 动画过渡允许状态机从一种动画状态切换或混合到另一种。
