@@ -174,9 +174,24 @@ Output Particle Forward Decal 粒子前向贴花
 * 三角形：与四边形粒子相比，几何形状只有一半，三角形基元可用于快速移动效果或渲染许多粒子的效果。
 * 八边形：有助于以推动额外几何体为代价减少过度绘制，八边形基元可用于紧密贴合粒子纹理并避免渲染不必要的透明区域。
 
+## 4. 代码驱动 VFX graph
+
+两种方式：
+1. 使用代码，控制脚本向 VFX graph 中传递事件；
+``` C# 
+vfx.SendEvent("OnPlay");
+vfx.SendEvent("OnStop");
+```
+2. 使用 Event Binders 组件，直接通过组件设置，调用VFX Graph  
+    例如，下图是一个鼠标事件的绑定器：
+    ![](../imgs/EventBinders-Mouse.png)  
+    当鼠标被按下时，执行指定特效的OnPlay事件
+
+
 <br>
 <hr>
 <br>
+
 
 > 参考资料：
 >
@@ -188,7 +203,8 @@ Output Particle Forward Decal 粒子前向贴花
 > 
 > VFX Graph youtube 教程：
 > * https://www.youtube.com/watch?v=7bMOhNUA1bI&list=PLpPd_BKEUoYhN8CiOoNLTSVh-7U5yjg3n
-
+>
+> VFX 蝴蝶特效教程：https://www.raywenderlich.com/20964535-making-hearts-fly-with-unity-vfx-graph
 
 <br>
 <hr>
