@@ -205,6 +205,8 @@ vfx.SendEvent("OnStop");
 > * https://www.youtube.com/watch?v=7bMOhNUA1bI&list=PLpPd_BKEUoYhN8CiOoNLTSVh-7U5yjg3n
 >
 > VFX 蝴蝶特效教程：https://www.raywenderlich.com/20964535-making-hearts-fly-with-unity-vfx-graph
+>
+> VFX 的一些延展使用方式：https://zhuanlan.zhihu.com/p/143173978
 
 <br>
 <hr>
