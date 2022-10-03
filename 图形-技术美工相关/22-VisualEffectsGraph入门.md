@@ -90,7 +90,7 @@ GPU 事件上下文是实验性上下文，它将输入连接到来自其他系�
 
 ### Initialize 初始化上下文
 
-Initialize Contexts 根据SpawnEvent数据生成新粒子，Unity 从 Event、Spawn Contexts 或 GPU Event Contexts 计算这些数据。
+Initialize Contexts 根据SpawnEvent数据初始化新粒子，Unity 从 Event、Spawn Contexts 或 GPU Event Contexts 计算这些数据。
 
 例如：如果 Spawn Context 声明效果应该创建 200 个新粒子，则 Initialize Context 会为所有 200 个新粒子处理其块。
 
@@ -116,6 +116,68 @@ Unity 执行更新上下文，从而更新每个粒子、每个帧。
 
 实际上就是控制最终粒子外观，如何被渲染的功能模块
 
+* Output Mesh 输出网格
+
+渲染一个常规的静态网格，并完全独立于粒子系统发挥作用。效果通常由不同的元素组成，例如粒子系统和网格。此输出允许您直接在视觉效果资源中渲染网格，并使用节点控制它们的着色器和变换属性。
+
+
+* Output Distortion 输出变形
+
+Output [Strip/Particle] Distortion [Quad/Mesh]
+
+特定于高清渲染管线 (HDRP) 的上下文节点。他们利用 HDRP 的 Distortion pass 来模拟光的弯曲。扭曲输出可用于粒子和粒子条数据类型，粒子扭曲上下文支持四边形和网格扭曲。失真输出对于模拟火灾造成的热失真等效果非常有用。
+
+* Output decals 输出贴花
+
+Output Particle Forward Decal 粒子前向贴花
+
+使用贴花（2d 纹理）渲染粒子系统。贴花是 Visual Effect Graph 将 2d 纹理投影形成的框（）
+
+然后 Unity 在沿其 xy 平面的任何相交几何体上渲染纹理。这意味着不与任何几何体相交的贴花粒子不可见。请注意，尽管它们不可见，但它们仍然有助于模拟和渲染系统所需的资源强度。
+
+不支持 Shader Graph，不能使用 lit 光照相关的shader, 且只能使用简单的 2d 纹理贴图
+
+* Output Line 输出线
+
+此输出渲染的对象是线。
+
+线由两个端点定义，并且无论粒子到相机的距离或粒子的大小和比例属性如何，它们始终是单个像素宽度。
+
+有两种模式可用于设置线的终点。第一个点总是在粒子位置：
+
+* 在粒子空间中使用目标偏移。通过在粒子空间中定义的偏移指定第二个点。
+* 使用目标位置属性。指定具有目标位置属性的第二个点。
+
+此输出不支持纹理或Shader Graph
+
+* Output particle Mesh 输出粒子网格
+
+允许您使用网格渲染粒子。
+
+* Output point 输出点
+
+使用点来渲染粒子系统。
+
+无论粒子与相机的距离或每个粒子的大小和比例属性如何，它总是将点绘制为单个像素。
+
+此输出不支持纹理或Shader Graph。
+
+* Output Primitive 输出原型
+
+ Output Particle [Primitive] (Output Particle (Lit) Quad, Output Particle (Lit) Triangle, Output Particle (Lit) Octagon)
+
+是最常用的输出类型，非常适合各种效果。
+
+此上下文支持以下平面图元：
+
+* Quad 四方：标准的矩形粒子，在大多数情况下都很有用。
+* 三角形：与四边形粒子相比，几何形状只有一半，三角形基元可用于快速移动效果或渲染许多粒子的效果。
+* 八边形：有助于以推动额外几何体为代价减少过度绘制，八边形基元可用于紧密贴合粒子纹理并避免渲染不必要的透明区域。
+
+<br>
+<hr>
+<br>
+
 > 参考资料：
 >
 > Vfx Graph 官方文档：https://docs.unity3d.com/Packages/com.unity.visualeffectgraph@15.0/manual/sample-content.html  
@@ -127,3 +189,14 @@ Unity 执行更新上下文，从而更新每个粒子、每个帧。
 > VFX Graph youtube 教程：
 > * https://www.youtube.com/watch?v=7bMOhNUA1bI&list=PLpPd_BKEUoYhN8CiOoNLTSVh-7U5yjg3n
 
+
+<br>
+<hr>
+<br>
+
+配套视频教程：
+[https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912](https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912)
+
+文章也同时同步微信公众号，喜欢使用手机观看文章的可以关注
+
+![](../imgs/微信公众号二维码.jpg)
