@@ -208,6 +208,7 @@ IK 主要是通过骨骼约束完成的，尽管在姿势模式中也有一个�
 >
 > -
 > - [FK & IK 简介](https://orzgame.blog.csdn.net/article/details/105642689)
+> - [https://www.raywenderlich.com/31539225-creating-reusable-characters-with-blender-and-unity](https://www.raywenderlich.com/31539225-creating-reusable-characters-with-blender-and-unity)
 
 <br>
 <hr>
