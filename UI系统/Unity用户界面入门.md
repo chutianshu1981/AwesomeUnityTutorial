@@ -129,9 +129,9 @@ UGUI 的优势：
 
 Rect Transform Inspector 中各属性值：
 
-* Pos X ，Pos Y，Pos Z: anchor锚点 沿着X轴和Y轴、Z轴 到 pivot 轴心点的距离
-*  Width、Height：矩形的宽和高
-*  Left/Right,Top/Bottom:有些UI控件，没有PosX和PosY、Width、Height（比如 Button），而是用上下左右边距来定位，就是各个边和父对象的距离
+* Pos X ，Pos Y，Pos Z: anchor锚点靠在一起时，显示这些属性，表示 锚点 沿着X轴和Y轴、Z轴 到 pivot 轴心点的距离
+*  Width、Height：UI空间所在矩形的宽和高
+*  Left/Right,Top/Bottom:当锚点不靠在一起时，就没有PosX和PosY、Width、Height（比如 Button），而是用上下左右边距来定位，就是各个边和父对象的距离
 *  Anchors Min：左下方锚点所在相对位置，取值百分比转换成的小数，相当于父元素位置的百分比
 *  Anchors Max：右上方锚点所在相对位置，取值百分比转换成的小数，相当于父元素位置的百分比
 *  Pivot ：轴心点所在的相对位置，取值百分比转换成的小数，相当于自身原点（矩形左下角）位置的百分比
