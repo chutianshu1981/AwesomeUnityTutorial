@@ -203,6 +203,10 @@ TextMesh Pro 支持两种文本对象。一个用于 Unity 的 UI，另一个用
 * Get Kerning Pairs 获取字距匹配: 可以选择是否使用字体中嵌入的字距信息。
 * Generate Font Asset: 生成TextMeshPro中文字体。点击后开始生成文件。完成后保存。然后在你的TextMeshPro组件中选择刚才生成的 .asset 文件即可
 
+> 注意：  
+> * Characters from File 不需要用最全的，最好是使用够用的就行，否则生成的字体文件会较大
+> * 生成 TextMeshPro 中文字体资源时，不同的字体表现不一样，尽可能选择著名大厂字体，避免 BUG，否则，可能出现各种问题，比如：生成失败、字体不清晰、字体自带背景（背景不透明）等
+
 <br>
 <hr>
 <br>
