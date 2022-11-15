@@ -183,7 +183,7 @@ TextMesh Pro 支持两种文本对象。一个用于 Unity 的 UI，另一个用
 2. 下载您喜欢的任何字体为 .otf 或 .ttf 文件，然后将它们导入到您的项目中。
 3.  从 Unity 的主菜单中，选择Window > TextMeshPro > Font Asset Creator 。  
 4.  在 Font Asset Creator 窗口中，将您的字体指定为Source Font File 
-5.  如果非英语字体，还需要在 Character Set 字符设置 中指定字符文件：下拉选择Characters from File，然后选择包含所有所需字符的txt文件（需要先导入Unity），推荐：[https://github.com/wy-luke/Unity-TextMeshPro-Chinese-Characters-Set](https://github.com/wy-luke/Unity-TextMeshPro-Chinese-Characters-Set)
+5.  如果非英语字体，还需要在 Character Set 字符设置 中指定字符文件：下拉选择Characters from File，然后选择包含所有所需字符的txt文件（需要先导入Unity）
 6.  选择Generate Font Atlas ，然后选择Save 。
 
 > 注意：TTF（TrueType Font）是Apple公司和Microsoft公司共同推出的字体文件格式，随着windows的流行，已经变成最常用的一种字体文件表示方式。 而OTF（OpenType Font）是TTF 的升级版，而OTF 是采用的是PostScript 曲线，支持OpenType 高级特性的更高级字体。
