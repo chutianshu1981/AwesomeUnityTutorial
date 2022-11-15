@@ -25,6 +25,9 @@ TextMesh Pro 支持两种文本对象。一个用于 Unity 的 UI，另一个用
 
 他们的功能基本相同，但有一些本质区别。
 
+> 注意：
+> 如果第一次使用 TextMeshPro ,会出现一个 TextMeshPro Import 窗口，点击上面的 Import 按钮即可完成导入，下面的导入按钮还可以导入示例
+
 ### UI 文本对象
 
 通过GameObject/UI/TextMeshPro-Text创建一个 UI 文本对象。与 Unity 的所有可见 UI 对象一样，新对象具有Rect Transform和Canvas Renderer组件。它的文本由Text Mesh Pro UGUI组件管理。
@@ -61,6 +64,8 @@ TextMesh Pro 支持两种文本对象。一个用于 Unity 的 UI，另一个用
     text style : 文本样式，可以在下拉列表中选择一些默认自带的文本样式
 
     ![](../../imgs/tmp_txtStyle.png)
+
+    文本支持输入 HTML ，比如 ： <color=#FF0000><B>玩家:</B></color>Xyz
 
 2. Main Settings 主设置
 
@@ -196,7 +201,7 @@ TextMesh Pro 支持两种文本对象。一个用于 Unity 的 UI，另一个用
    为了减小文件大小，可以下拉选择Custom Characters，只填入你项目中需要用到的所有字符
 * Render Mode: 渲染模式。在仍然支持光栅化位图处显示文本时，除非要在1：1的比率上呈现小字体（即，10pt字体在屏幕上呈现10px），否则使用SDF模式。
 * Get Kerning Pairs 获取字距匹配: 可以选择是否使用字体中嵌入的字距信息。
-* Generate Font Asset: 生成TextMeshPro中文字体。点击后开始生成文件。完成后保存。然后在你的TextMeshPro组件中选择刚才生成的文件即可
+* Generate Font Asset: 生成TextMeshPro中文字体。点击后开始生成文件。完成后保存。然后在你的TextMeshPro组件中选择刚才生成的 .asset 文件即可
 
 <br>
 <hr>
@@ -205,5 +210,6 @@ TextMesh Pro 支持两种文本对象。一个用于 Unity 的 UI，另一个用
 > 参考资料：
 > * [TextMeshPro官方文档](http://digitalnativestudios.com/textmeshpro/docs/)
 > * [TextMeshPro API 文档](http://digitalnativestudios.com/textmeshpro/docs/ScriptReference/TextMeshPro.html)
+> * [TextMeshPro 作者 Zolran youtube 频道](https://www.youtube.com/user/Zolran/videos)
 > * [TextMesh Pro: Font Asset Creation 官方教程](https://learn.unity.com/tutorial/textmesh-pro-font-asset-creation)
 > * [Unity 中 创建 TextMeshPro 中文字体（含常见汉字 TXT 文件）](https://blog.csdn.net/qq_37454669/article/details/121128100)
