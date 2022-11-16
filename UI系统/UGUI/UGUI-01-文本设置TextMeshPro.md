@@ -65,8 +65,10 @@ TextMesh Pro 支持两种文本对象。一个用于 Unity 的 UI，另一个用
 
     ![](../../imgs/tmp_txtStyle.png)
 
-    文本支持输入 HTML ，比如 ： <color=#FF0000><B>玩家:</B></color>Xyz
-
+    文本支持输入 HTML ，比如 ： 
+    ``` html
+    <color=#FF0000><B>玩家:</B></color>Xyz
+    ```
 2. Main Settings 主设置
 
     类似于word文档，可以选择字体设置、颜色、样式、对齐、间距、自动换行等等
