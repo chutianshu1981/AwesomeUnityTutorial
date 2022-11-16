@@ -66,3 +66,23 @@ Anchor Min 对应于 Scene View 中左下角的锚点手柄，Anchor Max 对应�
 当锚点分开时，字段可以部分或完全更改为“左”、“右”、“上”和“下”。这些字段定义了由锚定义的矩形内的填充。如果锚点水平分离，则使用 Left 和 Right 字段，如果它们垂直分离，则使用 Top 和 Bottom 字段。
 
 请注意，更改锚点或枢轴字段中的值通常会反向调整定位值，以使矩形保持原位。在不需要的情况下，通过单击检查器中的 R 按钮启用原始编辑模式。这会导致锚点和枢轴值能够更改，而不会因此而更改任何其他值。这可能会导致矩形在视觉上移动或调整大小，因为它的位置和大小取决于锚点和枢轴值。
+
+
+<br>
+<hr>
+<br>
+
+>参考资料
+>
+> - [创建用户界面 UI（官方手册）](https://docs.unity3d.com/cn/2021.2/Manual/UIToolkits.html)
+> - [UGUI 包文档](https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/index.html)
+> - [其他 UI 资料- UI 系统学习](https://pmlpml.github.io/unity3d-learning/09-ui.html)
+
+
+
+配套视频教程：
+[https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912](https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912)
+
+文章也同时同步微信公众号，喜欢使用手机观看文章的可以关注
+
+![](../../imgs/微信公众号二维码.jpg)
