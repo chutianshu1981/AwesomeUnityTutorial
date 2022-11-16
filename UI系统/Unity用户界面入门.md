@@ -185,7 +185,6 @@ Rect Transform Inspector 中各属性值：
 >
 > - [创建用户界面 UI（官方手册）](https://docs.unity3d.com/cn/2021.2/Manual/UIToolkits.html)
 > - [UGUI 包文档](https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/index.html)
-> - [Ruby's Adventure UI 教程](https://learn.unity.com/tutorial/shi-jue-feng-ge-yong-hu-jie-mian-tai-tou-xian-shi?uv=2020.3&projectId=5facf921edbc2a2003a58d3a)
 > - [其他 UI 资料- UI 系统学习](https://pmlpml.github.io/unity3d-learning/09-ui.html)
 
 
