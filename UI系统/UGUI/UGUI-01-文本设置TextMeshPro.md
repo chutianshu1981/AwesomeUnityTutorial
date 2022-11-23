@@ -65,7 +65,7 @@ TextMesh Pro 支持两种文本对象。一个用于 Unity 的 UI，另一个用
 
     ![](../../imgs/tmp_txtStyle.png)
 
-    文本支持输入 HTML ，比如 ： 
+    文本支持输入类似 HTML 的富文本标签 Rich TextTags ，比如 ： 
     ``` html
     <color=#FF0000><B>玩家:</B></color>Xyz
     ```
@@ -214,8 +214,8 @@ TextMesh Pro 支持两种文本对象。一个用于 Unity 的 UI，另一个用
 <br>
 
 > 参考资料：
-> * [TextMeshPro官方文档](http://digitalnativestudios.com/textmeshpro/docs/)
-> * [TextMeshPro API 文档](http://digitalnativestudios.com/textmeshpro/docs/ScriptReference/TextMeshPro.html)
+> * [TextMeshPro官方文档](https://docs.unity3d.com/Packages/com.unity.textmeshpro@4.0/manual/RichTextSprite.html)
+> * [TextMeshPro API 文档](https://docs.unity3d.com/Packages/com.unity.textmeshpro@4.0/api/index.html)
 > * [TextMeshPro 作者 Zolran youtube 频道](https://www.youtube.com/user/Zolran/videos)
 > * [TextMesh Pro: Font Asset Creation 官方教程](https://learn.unity.com/tutorial/textmesh-pro-font-asset-creation)
 > * [Unity 中 创建 TextMeshPro 中文字体（含常见汉字 TXT 文件）](https://blog.csdn.net/qq_37454669/article/details/121128100)
