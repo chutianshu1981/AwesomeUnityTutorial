@@ -1,12 +1,11 @@
 # Rect Transform 矩形变换
-
 ## 1. Rect Transform 矩形变换概念及基本属性
 
 矩形变换像常规变换一样具有位置，旋转和比例，但它还具有宽度和高度表示矩形的尺寸。
 
 注意：因为UI是实际上是2D元素，所以进行变换是需要用矩形工具 
 
-![](../imgs/UI_RectTransform.png)
+![](../../imgs/UI_RectTransform.png)
 
 Rect Transform Inspector 中各属性值：
 
