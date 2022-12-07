@@ -1,6 +1,8 @@
 # Rect Transform 矩形变换
 ## 1. Rect Transform 矩形变换概念及基本属性
 
+这里所说的 Rect 矩形，就是 UI 元素的所在位置。
+
 矩形变换像常规变换一样具有位置，旋转和比例，但它还具有宽度和高度表示矩形的尺寸。
 
 注意：因为UI是实际上是2D元素，所以进行变换是需要用矩形工具 
@@ -16,7 +18,7 @@ Rect Transform Inspector 中各属性值：
 *  Anchors Max：右上方锚点所在相对位置，取值百分比转换成的小数，相当于父元素位置的百分比
 *  Pivot ：轴心点所在的相对位置，取值百分比转换成的小数，相当于自身原点（矩形左下角）位置的百分比
 *  Rotation ：旋转，一般只有以轴心，相对Z轴旋转的角度值
-*  Scale ：缩放，一般不使用，会影响子对象设置时的计算。通常只用在动画或过场时。 
+*  Scale ：缩放，一般不使用，会影响子对象设置时的计算。通常只用在动画或过场时。UI 元素实际大小等于 width/height * Scale 。 
 *  BluePrint Mode ：蓝图模式，旋转和缩放对于当前矩形将失效（但对UI元素显示还是有效的，就是不再影响定位），同时会开启自动停靠
 *  Raw Edit Mode：原始编辑模式，调整锚点和轴心点时，当前对象会跟通过改变自己的大小来进行适配当前中心点和对应锚点的位置。
 
@@ -56,7 +58,9 @@ Rect Transform Inspector 中各属性值：
 > - [UGUI 包文档](https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/index.html)
 > - [其他 UI 资料- UI 系统学习](https://pmlpml.github.io/unity3d-learning/09-ui.html)
 
-
+<br>
+<hr>
+<br>
 
 配套视频教程：
 [https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912](https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912)
