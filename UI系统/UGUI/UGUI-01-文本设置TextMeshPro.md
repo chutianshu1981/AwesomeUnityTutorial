@@ -219,3 +219,14 @@ TextMesh Pro 支持两种文本对象。一个用于 Unity 的 UI，另一个用
 > * [TextMeshPro 作者 Zolran youtube 频道](https://www.youtube.com/user/Zolran/videos)
 > * [TextMesh Pro: Font Asset Creation 官方教程](https://learn.unity.com/tutorial/textmesh-pro-font-asset-creation)
 > * [Unity 中 创建 TextMeshPro 中文字体（含常见汉字 TXT 文件）](https://blog.csdn.net/qq_37454669/article/details/121128100)
+
+<br>
+<hr>
+<br>
+
+配套视频教程：
+[https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912](https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912)
+
+文章也同时同步微信公众号，喜欢使用手机观看文章的可以关注
+
+![](../../imgs/微信公众号二维码.jpg)
