@@ -38,11 +38,11 @@
 
 在 Inspector 面板中，可以在 Rect Transform 组件的左上角找到 Anchor Preset 按钮。点击该按钮会弹出 Anchor Presets 下拉菜单。
 
-![](../imgs/UI_AnchorPreset.png)
+![](../../imgs/UI_AnchorPreset.png)
 
 如果水平轴或垂直轴上的锚点设置为与任何预设不同的位置，则会显示自定义选项。
 
-![](../imgs/UI_RectTransform1.png)
+![](../../imgs/UI_RectTransform1.png)
 
 Anchor Min 对应于 Scene View 中左下角的锚点手柄，Anchor Max 对应于右上角的手柄。
 
