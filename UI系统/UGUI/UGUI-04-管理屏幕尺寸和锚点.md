@@ -52,6 +52,15 @@ Anchor Min 对应于 Scene View 中左下角的锚点手柄，Anchor Max 对应�
 
 请注意，更改锚点或枢轴字段中的值通常会反向调整定位值，以使矩形保持原位。在不需要的情况下，通过单击检查器中的 R 按钮启用原始编辑模式。这会导致锚点和枢轴值能够更改，而不会因此而更改任何其他值。这可能会导致矩形在视觉上移动或调整大小，因为它的位置和大小取决于锚点和枢轴值。
 
+## 2. UGUI UI 对象 Pivot/Anchor 三种设置方式总结
+
+1. 直接拖拽：
+    在 Scene 中，通过鼠标拖拽定位 Pivot / Anchors
+2. Anchor Preset ：
+    在 Inspector 的 Anchor Preset 中，设置 Anchor 时，按着 Shift 键，可以同时设置 pivot
+3. Pivot/Anchors 属性： 
+    在 Inspector 的 Pivot /Anchors属性中，直接通过设置 Pivot /Anchors的值进行定位。  
+    Pivot /Anchors  x/y 值 都是  [0-1] 之间 ，矩形左下角为 (0,0) 
 
 <br>
 <hr>
