@@ -105,6 +105,8 @@ A ： 游戏产业非常大，岗位非常细，每个公司、各个岗位要�
 <hr>
 <br>
 
+容易导入出错的项目，我已经把加载完整的初始项目打包放在网盘上了，如果你的一打开项目，一直有错无法解决，可以尝试下载下面的
+
 > 【完整项目】：
 > * CreatorKitBeginnerCode 驯鹿 3D ARPG 项目， 链接：https://pan.xunlei.com/s/VN4u_vEm6jPzfQ_7BoG7EWC9A1?pwd=dd3c# 提取码：dd3c
 > * 2D Game Kit 项目，链接：https://pan.xunlei.com/s/VN87VGqC2Eku7qTOyNb9uyimA1?pwd=id9b# 提取码：id9b
