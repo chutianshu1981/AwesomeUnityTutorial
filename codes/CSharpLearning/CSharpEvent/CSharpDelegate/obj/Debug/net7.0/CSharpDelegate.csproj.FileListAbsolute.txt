@@ -1,0 +1,15 @@
+F:\Documents\AwesomeUnityTutorial\codes\CSharpLearning\CSharpEvent\CSharpDelegate\bin\Debug\net7.0\CSharpDelegate.exe
+F:\Documents\AwesomeUnityTutorial\codes\CSharpLearning\CSharpEvent\CSharpDelegate\bin\Debug\net7.0\CSharpDelegate.deps.json
+F:\Documents\AwesomeUnityTutorial\codes\CSharpLearning\CSharpEvent\CSharpDelegate\bin\Debug\net7.0\CSharpDelegate.runtimeconfig.json
+F:\Documents\AwesomeUnityTutorial\codes\CSharpLearning\CSharpEvent\CSharpDelegate\bin\Debug\net7.0\CSharpDelegate.dll
+F:\Documents\AwesomeUnityTutorial\codes\CSharpLearning\CSharpEvent\CSharpDelegate\bin\Debug\net7.0\CSharpDelegate.pdb
+F:\Documents\AwesomeUnityTutorial\codes\CSharpLearning\CSharpEvent\CSharpDelegate\obj\Debug\net7.0\CSharpDelegate.csproj.AssemblyReference.cache
+F:\Documents\AwesomeUnityTutorial\codes\CSharpLearning\CSharpEvent\CSharpDelegate\obj\Debug\net7.0\CSharpDelegate.GeneratedMSBuildEditorConfig.editorconfig
+F:\Documents\AwesomeUnityTutorial\codes\CSharpLearning\CSharpEvent\CSharpDelegate\obj\Debug\net7.0\CSharpDelegate.AssemblyInfoInputs.cache
+F:\Documents\AwesomeUnityTutorial\codes\CSharpLearning\CSharpEvent\CSharpDelegate\obj\Debug\net7.0\CSharpDelegate.AssemblyInfo.cs
+F:\Documents\AwesomeUnityTutorial\codes\CSharpLearning\CSharpEvent\CSharpDelegate\obj\Debug\net7.0\CSharpDelegate.csproj.CoreCompileInputs.cache
+F:\Documents\AwesomeUnityTutorial\codes\CSharpLearning\CSharpEvent\CSharpDelegate\obj\Debug\net7.0\CSharpDelegate.dll
+F:\Documents\AwesomeUnityTutorial\codes\CSharpLearning\CSharpEvent\CSharpDelegate\obj\Debug\net7.0\refint\CSharpDelegate.dll
+F:\Documents\AwesomeUnityTutorial\codes\CSharpLearning\CSharpEvent\CSharpDelegate\obj\Debug\net7.0\CSharpDelegate.pdb
+F:\Documents\AwesomeUnityTutorial\codes\CSharpLearning\CSharpEvent\CSharpDelegate\obj\Debug\net7.0\CSharpDelegate.genruntimeconfig.cache
+F:\Documents\AwesomeUnityTutorial\codes\CSharpLearning\CSharpEvent\CSharpDelegate\obj\Debug\net7.0\ref\CSharpDelegate.dll
