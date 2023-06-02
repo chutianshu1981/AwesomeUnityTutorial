@@ -4,10 +4,9 @@
 
 因为厂家不同，不同硬件、不同系统的底层 AR 库都不同，为了让自己的 AR 库支持更为广泛，Unity 设计了统一的接口，在原有各厂商的 AR 库之上，又增加了一层，称为：Unity AR Foundation 
 
-
 ![](../../imgs/unity-xr-tech-stack.png)
 
-AR Foundation (Unity 2019.3) 允许您在 Unity 中以多平台方式使用增强现实平台。
+AR Foundation (自 Unity 2019.3 加入) 允许您在 Unity 中以多平台方式使用增强现实平台。
 
 ## 2. 优缺点
 
