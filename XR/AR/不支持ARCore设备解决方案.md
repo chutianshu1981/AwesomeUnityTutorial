@@ -4,6 +4,9 @@
 
 ## 2. 使用替代库
 
-### 2.1 EasyAR
+### 2.1 OpenAR
 
-### 2.2 Vuforia
+### 2.2 EasyAR
+
+### 2.3 Vuforia
+
