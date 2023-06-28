@@ -34,8 +34,6 @@
 * 左侧选中 open XR ,按图中指示，添加至少一个vr硬件品牌的交互档案：
   ![](../../imgs/openxrAddinteraction.png)
   我们后面可以并不使用这个设备，但如果不添加的话，会一直报错
-* 然后，将所有的 openxr feature groups 中的选项打开：
-  ![](../../imgs/openxr_5.png)
 
 > 注意，如果使用其他的硬件设备，上面的步骤选择对应的品牌即可，方式一样。如果 unity 自带的那些 VR 硬件品牌没有你需要的，比如 PICO ，请看下一篇文章，我会单独介绍
 
@@ -55,22 +53,22 @@
 
 ![](../../imgs/xr-project-validation_1.png)
 
-### 模拟头显 Mock HMD
-
-Mock HMD 包在 Play 模式下的 Unity游戏视图中提供模拟 HMD 。Mock HMD 是一个提供者插件，可模拟头戴式设备的存在。在XR 插件管理设置部分启用模拟 HMD 。输入和跟踪不是模拟的。
-
-提示： XR 交互工具包提供了一个XR 设备模拟器( XR Device Simulator )，可将键盘和鼠标输入转换为移动和交互。
-
-
 
 如果出现一些相关 OpenXR 且不能解决的问题，可以先去查看官方文档 ：[OpenXR plugin](https://docs.unity3d.com/Packages/com.unity.xr.openxr@1.8/manual/index.html)
 
 ## 2. 安装和配置 VR 模拟环境
 
+允许非稳定测试包：
+
+Edit -> Project Settings -> Package Manager 
+
+打开：Enable Pre-release Packages
+
 ### 2.1 安装 XR Interaction Toolkit and samples
 
 * 打开 package Manager
-* 选择+按钮并选择按名称添加项目，然后输入“com.unity.xr.interaction.toolkit”。安装
+* 选择+按钮并选择按名称添加项目，然后输入“com.unity.xr.interaction.toolkit”。安装  
+  注：这种方式安装可以安装上最新版
 * 安装示例（sample）以进行快速开发
 
   ![](../../imgs/xr_interaction_toolkit.png)
@@ -81,5 +79,8 @@ Mock HMD 包在 Play 模式下的 Unity游戏视图中提供模拟 HMD 。Mock H
 
 ### 3.1 创建场景
 
+* 新建 Scene
+* 删除 Main Camera，只保留 Directional Light 即可
 
-### 3.2 添加并配置 XR Origin
+### 3.2 通过 预制件 快速添加 XR 所需组件
+
