@@ -89,4 +89,4 @@ Edit -> Project Settings -> Package Manager
 * 新建一个 3D GameObject Plane，作为地面参照物
 * 新建一个 3D 任意形状对象，作为移动参照物
 * 喜欢的话，再为地面和形状加上不同的材质，让场景更鲜活
-* 点击 Play ，根据提示在 VR 模拟器中体验吧 
+* 点击 Play ，根据提示在 VR 模拟器中体验吧 matieral
