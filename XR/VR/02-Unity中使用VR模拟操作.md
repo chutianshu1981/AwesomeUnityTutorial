@@ -84,3 +84,9 @@ Edit -> Project Settings -> Package Manager
 
 ### 3.2 通过 预制件 快速添加 XR 所需组件
 
+* 将 Assets/Samples/XR Interaction Toolkit/版本号/Starter Assets/Prefabs/ 中的 XR Interaction Setup 拖入 Hierarchy
+* 将 Assets/Samples/XR Interaction Toolkit/版本号/XR Device Simulator 中的 XR Device Simulator 拖入 Hierarchy
+* 新建一个 3D GameObject Plane，作为地面参照物
+* 新建一个 3D 任意形状对象，作为移动参照物
+* 喜欢的话，再为地面和形状加上不同的材质，让场景更鲜活
+* 点击 Play ，根据提示在 VR 模拟器中体验吧 
