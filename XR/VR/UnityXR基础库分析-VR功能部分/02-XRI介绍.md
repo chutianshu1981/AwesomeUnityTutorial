@@ -2,7 +2,13 @@
 
 ## 1. 概念
 
-XR Interaction Toolkit包是一个基于组件的高级交互系统，用于创建VR和AR体验。它提供了一个框架，通过Unity输入事件使3D和UI交互可用。该系统的核心是一组基本的Interactor和Interactable组件，以及将这两种类型的组件联系在一起的Interaction Manager。它还包含一些用于移动和绘制视觉效果的组件。
+XR Interaction Toolkit包是一个基于组件的高级交互系统，用于创建VR和AR体验。
+
+它提供了一个框架，通过Unity输入事件使3D和UI交互可用。
+
+该系统的核心是一组基本的 Interactor 和 Interactable 组件，以及将这两种类型的组件联系在一起的 Interaction Manager。
+
+它还包含一些用于移动和绘制视觉效果的组件。
 
 ### XR Interaction Toolkit包含一组支持以下交互任务的组件：
 
