@@ -31,7 +31,10 @@ XR Interaction Toolkit包是一个基于组件的高级交互系统，用于创�
 
 ### 1.1 核心组件
 
-### Interactors 交互者
+### Interactors 交互者 —— 动作发出者（主动）
+
+  **An object in a scene that can select or move another object in that scene.**
+  VR 场景中的一个对象，可以选择或移动场景中的其他对象（Interactable 可交互对象）
 
 用于处理可交互对象的 Hover 和 Select 操作
 
@@ -39,7 +42,7 @@ XR Interaction Toolkit包是一个基于组件的高级交互系统，用于创�
 
 可交互有效目标列表按照优先级排序。默认，最近的可交互对象具有最高优先级。可使用目标过滤器来更改或扩展此优先级标准。
 
-### Interactables 可交互对象
+### Interactables 可交互对象 —— 动作接收者（被动）
 
 可交互对象是场景中的对象，交互者可以悬停、选择、聚焦和/或激活。
 
