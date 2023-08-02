@@ -90,7 +90,7 @@ XR Controller组件提供了一种抽象输入数据的方法，然后Interactor
   选择 “Select” 状态，通常需要用按键来触发。当可出发游戏对象（Interactable）在 “Select" 状态下时， Unity 认定触发它的触发者（Interactor）正在和其交互。例如：选择这种状态可以是 ———— 捡起一个可以被握住的对象、正在握着一个开关、准备推开一扇门
 
 * Focus 聚焦  
-  聚焦并不是一个标准状态，而是对Select状态的辅助说明，如果把它当做一个状态的话，可以把它当做是“Select”的别称。一个可交互对象在他处于“Select”状态下时，就可以称为被“Focused”，正在被聚焦。这种效果会一直存在，直到别的可交互对象被选中（Select）或 任何对象都不被选中时结束。这是处理（Activate）一个可交互对象的预先状态。
+  当一个可交互对象被 Selected 时，会进入 Focus 状态，正在被聚焦。这种效果会一直存在，直到别的可交互对象被选中（Select）或 任何对象都不被选中时结束。这是处理（Activate）一个可交互对象的预先状态。
 
 * Activate 激活  
   Activation 激活是一种额外的操作，通常会映射到按钮或触发器上，从而影响当前选定的对象。这可以让用户进一步与所选对象进行交互。激活操作取决于可交互对象。例如，您可以使用 "激活 "来打开/关闭可抓取的手电筒或发射球。您可以使用 "检查器 "窗口中的 "可交互事件"（Interactable Events）挂钩现有的回调，然后通过 UnityEvents 添加到 "激活"（Activated）中，从而挂钩组件将 "激活"（Activate）处理为动作，而无需任何额外代码。
@@ -123,7 +123,14 @@ Activate 则是 XR 中独有的概念，代表 Select 选中游戏对象的一�
 
 交互强度值在所有交互状态改变发生后由交互管理器显式地使用ProcessInteractionStrength方法进行更新。在这种情况下，可交互物体在交互者之前被通知，以便在收集交互者的整体交互强度之前计算戳击的深度。
 
+<br>
+<br>
+<hr>
+<br>
 
+>参考文档：
+>
+> * [Unity 官方文档](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.4/manual/architecture.html)
 
 
 
