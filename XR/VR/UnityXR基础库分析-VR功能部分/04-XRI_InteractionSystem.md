@@ -33,6 +33,21 @@ Interaction System 是 Unity XRI 中的核心系统，用于实现将控制输�
 
 ![](../../../imgs/class-hierarchy.svg)
 
+### 1.5 三种状态（三个操作）
+
+在 02 XRI 介绍中，已经提到过这三种类型 VR 操作对应的三种状态，在此再强调一次
+
+* Hover 悬停：  
+  Interactor Ray 射线或 Collider 和 Interactable 碰撞时，处于 Hover 状态。不需要控制器按键，只需要控制器处于特定位置，使碰撞（射线碰撞或碰撞体碰撞）生效
+
+* Select 选择：  
+  通常发生在 Hover 前提之下，可以由 Hover 转换为 Select ，通常绑定的是控制器的 Grip 键。  
+  当 Grip 键被按下，即 GripPressed 时触发。
+
+* Activate 激活：  
+  通常发生在 Select 前提之下，由 Select 转为 Activate ，通常绑定的是控制器的 Trigger 键。  
+   当 Trigger 键被按下，即 TriggerPressed 时触发
+
 ## 2. 系统组件
 
 见下图：
@@ -58,7 +73,7 @@ Interaction System 是 Unity XRI 中的核心系统，用于实现将控制输�
   选择 Unity 如何解释来自控制器的选择输入操作。推荐使用默认选项 State Change  
     * State ：只要select 操作对应的按键处于激活状态，Unity 会认为输入处于活动状态。用户可以在可以进行交互之前按住按钮，但在可以进行交互时仍会触发交互。如果多个交互者选择了设置为 InteractableSelectMode.Single 的可交互对象，则可能会出现不希望出现的行为，即在每一帧中，可交互对象的选择在交互者之间来回传递。这也会导致每帧都触发选择交互事件。
     * State change：只有在按下按钮的那一帧，Unity 才会认为该输入处于激活状态，用户必须在可以进行交互时按下按钮才能触发交互。如果用户在可以进行交互之前就开始按下按钮，则不会触发交互。
-    * Toggle：按下进入激活状态，直到第二次按键才能取消
+    * Toggle：按下进入激活状态，直到第二次按键才能取消，比如玩家抓取一个物体后，不想一直按着 grip 键就能保持 selected 状态，就可以设定为这个选项
     * Sticky：按下进入激活状态，直到第二次按键松开才能取消
 
 * Keep Selected Target Valid  
