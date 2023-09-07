@@ -91,6 +91,12 @@ Interaction System 是 Unity XRI 中的核心系统，用于实现将控制输�
 * Allow Hovered Activate  
   当前的 Interactor 在 Hovered 状态但是，没有处于 Selected 状态时，是否要发送 activate 和 deactivate 事件给 Interactable 对象。默认是只有处于 Selected 状态时，Interactor 才允许发送activate 和 deactivate 事件给 Interactable 对象。 
 
+* Target Priority Mode  
+  交互目标的优先模式，设定要监控的目标个数  
+  * None： 不监控，选择这个模式时，Interactor 的 targetsForSelection 属性（Interactable 按优先级排序而成的 列表）不会被更新，消耗最低
+  * HighestPriorityOnly：只监控优先级最高的目标，targetForSelection 列表将只更新优先级最高的目标，如果当前帧中没有可选择的目标，则该列表将为空。该选项的性能代价适中。
+  * All：跟踪所有目标，targetForSelection 列表将更新为当前帧中可选择的所有交互对象。该选项的性能代价较高。
+
 * Stating Selected Interactable  
   起始选中的交互对象 
 
@@ -115,13 +121,16 @@ XRTargetFilter 组件是一个高度可配置的组件，用于过滤有效目�
 ### XR unity events配置
 
 * Audio Events  
-  设置 unity XR Interacation 事件绑定播放指定音频
+  设置 unity XR Interacation 事件绑定播放指定音频  
+  * AudioClip To Play : 挂接需要播放的声音片段文件
 
 * Haptic Events  
-   设置 unity XR Interacation 事件绑定控制器震动反馈
+   设置 unity XR Interacation 事件绑定控制器震动反馈  
+   * Haptic Intensity: 震动强度
+   * Duration：震动时长
 
 * Interactor Events  
-     设置 unity XR Interacation 事件绑定任意自定义的方法
+     设置 unity XR Interacation 事件绑定任意自定义的方法，一个事件可以同时挂接多个方法
 
 
 
@@ -147,9 +156,43 @@ XRTargetFilter 组件是一个高度可配置的组件，用于过滤有效目�
 
 ## 4. Interactable 交互对象
 
+交互对象必须同时再挂接碰撞体和刚体才能真正实现交互
+
+碰撞体尽量用形状接近的集合碰撞体，Mesh 碰撞体比较吃性能，而且容易出 Bug（如果模型有瑕疵的话）
+
 ### 4.1 交互对象组件通用属性
 
+* Interaction Manager   
+  交互管理器，连接交互器和交互对象的桥梁，所有交互操作都通过这里发出
+
+* Interaction Layer Mask  
+  设置专属的交互层，来对不同类型的交互分割开，同一层的交互层的 Interactor 和 Interactable 才能交互，不同层互不影响。注意，这个和普通的 Layer 无关
+
+* Colliders：   
+  碰撞体。用来跟 Interactor 中碰撞体碰撞的组件，是实现交互的基础。碰撞体碰撞后，才会引发 Hover 状态的产生。如果当前游戏对象上有碰撞体，可以不填留空，Unity 会自动绑定
+
+* Distance Calculation Mode
+
+* Custom Reticle
+
+* Select Mode
+
+* Focus Mode
+
+* Gaze Configuration  
+  是否允许瞳孔跟踪交互
+
+* Interactable Filters
+
+* Interactable Events
+
 ### 4.2 Simple Interactable 简单交互对象
+
+不能被拿起来，它的所有属性，Grab Interactable 里都有。
+
+但存在的就是合理的，既然叫 Simple “简单”，功能上弱但性能上自然就更优。
+
+可以用在一些固定不动的交互物体上
 
 ### 4.3 Grab Interactable 抓取交互对象
 
