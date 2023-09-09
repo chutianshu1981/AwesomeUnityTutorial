@@ -60,7 +60,7 @@ Unity 不同于编程，很多操作，仅用文档很难说明白，需要以�
 
 ## 4. 资源
 
-- [教程视频 B 站地址](https://space.bilibili.com/43644141/channel/seriesdetail?sid=299912)
+- [教程视频 B 站地址](https://space.bilibili.com/43644141)
 - [最新官方手册文档中文版](https://docs.unity3d.com/cn/2021.2/Manual/UnityManual.html)
 - [官方 C#入门教程](https://learn.u3d.cn/tutorial/beginner-gameplay-scripting)
 
