@@ -61,6 +61,9 @@ Interaction System 是 Unity XRI 中的核心系统，用于实现将控制输�
 
 ### 3.1 交互器组件通用属性
 
+下面这些属性是每个 Interactor 都具备的通用属性，需要先掌握
+
+![](../../../imgs/XRInteractorProperty.png)
 ### Selection 配置
 
 * Interaction Manager   
@@ -130,7 +133,7 @@ XRTargetFilter 组件是一个高度可配置的组件，用于过滤有效目�
    * Duration：震动时长
 
 * Interactor Events  
-     设置 unity XR Interacation 事件绑定任意自定义的方法，一个事件可以同时挂接多个方法
+  设置 unity XR Interacation 事件绑定任意自定义的方法，一个事件可以同时挂接多个方法
 
 
 
@@ -149,6 +152,108 @@ XRTargetFilter 组件是一个高度可配置的组件，用于过滤有效目�
   每帧使用优化的球状碰撞体来生成触点，而不是依赖固定更新上（FixedUpdate）的触点事件。禁用可强制使用触发事件(Trigger Event)。
 
 ### 3.3 Ray Iteractor 射线（间接）交互器
+
+Ray Interactor 使用射线投射和 Interactable 的 Collider 碰撞，从而产生交互事件。所以它在使用时，必须配上能显示、并调整射线外观的配套组件：  
+* Line Render 射线渲染器  
+  Unity 中，设置线显示数据的组件。和大多数 Unity 中的渲染器组件类似，其中包含 材质、阴影设置、光探针 等相关渲染呈现所需要的元数据。  
+  ![](../../../imgs/LineRenderer.png)
+* XR Interactor Line Visual 交互器射线显示配置组件  
+  用来配置交互射线的一些外观属性。如 颜色、线宽等  
+  ![](../../../imgs/XRInteractorLineVisual.png)
+
+### XR Ray Iteractor 特定属性
+
+XR Ray Iteractor 相较 Direct Interactor 而言，多了射线后，就多出了很多特定的属性:
+
+![](../../../imgs/XRRayInteractor.png)
+
+* Force Grab ：  
+  选中时，抓取的 Interactable 游戏对象会被握在手里；否则，将会出现在射线末端  
+* Anchor Control :  
+  允许用户使用操纵杆移动连接锚点。  
+  * Translate Speed:  
+    锚点平移的速度。仅在启用锚点控制时使用和显示  
+  * Rotate Refernce Frame:  
+    用于在旋转附加锚点时定义向上轴。未设置时，将围绕附加变换的本地向上轴旋转。  
+  * Rotation Mode:  
+    指定如何控制锚点旋转
+    * Rotate Over Time:  
+      "随时间旋转"，可在旋转输入激活时控制锚点随时间旋转。  
+    * Match Direction: 
+       "匹配方向"，以便将锚点旋转与二维旋转输入的方向相匹配。
+  * Rotation Speed:  
+    锚点旋转的速度。仅在启用锚点控制且旋转模式设置为随时间旋转时使用和显示。
+* Ray Origin Transform  
+  任何射线投射的起始位置和方向。  如果无，则在唤醒时自动实例化和设置，并使用 XRBaseInteractor.attachTransform 的姿势进行初始化。设置后不会自动销毁前一个对象。
+
+### Raycast Configuration  射线类型和形状配置
+
+射线根据 Line Type 分为三种，每种的属性和设置都不同
+
+通用属性为：
+
+* Raycast Mask ：  
+  用于限制光线投射目标的图层蒙板。
+* Raycast Trigger Interaction：  
+  通过射线投射与触发碰撞器的交互类型。
+* Raycast Snap Volume Interaction  ：
+  即使射线投射已设置为忽略触发器，射线投射是否仍应包括或忽略对触发器碰撞器（即快速体积碰撞器）的命中。如果不使用凝视辅助或 XR 可交互快照体积组件，则应将此属性设置为忽略，以避免性能代价。
+* Hit Detection Type：  
+  射线碰撞类型，有以下三个选项：  
+  * Raycast ：  
+    使用物理 Raycast 检测碰撞。
+  * Sphere Cast：  
+    使用物理球形 Cast 检测碰撞。
+  * Cone Cast：  
+    使用锥形来检测碰撞。
+* Hit Closest Only：  
+  Unity 是否只将最近的交互对象视为有效的交互目标。  
+  启用此选项可使只有最近的交互对象接收悬停事件。  
+  否则，所有被击中的交互对象都将被视为有效目标，并且此交互对象将多重悬停。
+* Blend Visual Line Points：  
+  将 Unity 用于射线投射的线条采样点与控制器的当前姿势混合。使用此方法可使线条视觉效果与控制器保持连接，而不是滞后。  
+  当控制器被配置为在渲染前直接采样跟踪输入以减少输入延迟时，控制器可能会处于相对于光线投射所用采样曲线起点的新位置或旋转位置。  
+  如果值为 false，则视觉线将保持在固定的参考帧上，而不会向光线投射线的末端弯曲。
+
+* Straight Line 直线  
+  * Max Raycast Distance
+* Projectile Curve 抛物线  
+  * Reference Frame :
+    仅在线条类型为抛物线或贝塞尔曲线时使用和显示。  用于定义地平面和向上的曲线参考框架。如果未在启动时设置，它将尝试查找 XROrigin.Origin 游戏对象，如果该对象不存在，它将默认使用全局向上和原点。  
+    说白了就是定义曲线的原点的弯曲方向
+  * Velocity ：  
+    仅在线条类型为抛物线时使用和显示。初始速度。  
+    增大该值会使曲线延伸得更远。
+  * Acceleration ： 
+    重力
+  * Additional Ground Height：  
+    在地面以下继续飞行的额外高度。  
+    增加该值会使终点下降的高度降低。
+  * Additional Flight Time：  
+    降落到调整后的地面高度后的额外飞行时间。  
+    增加该值会使终点高度降低。
+  * Sample Frequency：  
+    Unity 用于近似曲线路径的采样点数量。  
+    数值越大，近似的质量越高，但由于射线投射的次数增多，性能会有所降低。  
+    数值为 n 时，射线投射将产生 n - 1 个线段。
+    说白了，就是数量越大，线越圆润，但越消耗资源
+* Bezier Curve 贝塞尔曲线  
+  * Reference Frame ：  
+    同上
+  * End Point Distance：  
+    末端距离。  
+    增大该值距离，可使曲线终点距离起点更远。
+  * End Point Height：  
+    末端高度。  
+    减小该值可使曲线末端相对于起点下降得更低。
+  * Control Point Distance：  
+    增大该值可使曲线峰值离起点更远。
+  * Control Point Height：  
+    增加该值可使曲线峰值相对于起点更高。
+  * Sample Frequency：  
+    同上
+  
+
 
 ### 3.4 Socket Interactor 插孔（磁吸式）交互器
 
@@ -172,19 +277,40 @@ XRTargetFilter 组件是一个高度可配置的组件，用于过滤有效目�
   碰撞体。用来跟 Interactor 中碰撞体碰撞的组件，是实现交互的基础。碰撞体碰撞后，才会引发 Hover 状态的产生。如果当前游戏对象上有碰撞体，可以不填留空，Unity 会自动绑定
 
 * Distance Calculation Mode
+  设定计算与 Interactor 距离的算法模式，从最快到最精确。  
+  如果当前 Interactable 使用 Mesh Collider，则碰撞体的体积仅当设定为 Convex 时才有效
+  * Transform Position ：  
+    直接使用 Interactable 的 Transform 中的属性来计算距离。  
+    消耗最小。  
+     但对某些对象而言，其距离计算精度可能较低。
+  * Collider Position ：  
+     使用 Interactable 对象上的 Colliders List ，分别计算每个碰撞体 跟 Interactor 的最短距离。   
+     该选项的性能成本适中，对于大多数对象而言，距离计算的精确度也应适中。
+  * Collider Volume ：  
+    使用 Interactable 的 Colliders 列表计算距离，使用到每个对撞机最近点（表面或对撞机内部）的最短距离。  
+    该选项的性能成本较高，但距离计算精度较高。
 
-* Custom Reticle
+* Custom Reticle  
+  自定义准星，这个投射在 Interaction 表面上的准星，一般设置位 2D 的图片
 
-* Select Mode
-
+* Select Mode  
+  表示 Interactable 的选择策略。它控制有多少个交互者可以选择该交互对象。  
+  只有在尝试选择时，交互管理器才会读取该值，因此将该值从 "多个 "改为 "单个 "不会导致退出选择。
+  * Single:  
+  防止同时有多个互动者进行额外的同步选择。
+  * Multiple:  
+  允许同时从多个交互器中选择交互对象。
 * Focus Mode
-
+  指定此交互对象的焦点策略。
+  * None: 
+    将 "焦点模式 "设置为 "无 "可禁用可交互对象的 "焦点 "状态。
+  * Single:
+    允许单个交互组的交互者关注该交互对象。
+  * Multiple:  
+    允许多个交互组的交互者关注该交互对象。
 * Gaze Configuration  
   是否允许瞳孔跟踪交互
 
-* Interactable Filters
-
-* Interactable Events
 
 ### 4.2 Simple Interactable 简单交互对象
 
@@ -196,6 +322,122 @@ XRTargetFilter 组件是一个高度可配置的组件，用于过滤有效目�
 
 ### 4.3 Grab Interactable 抓取交互对象
 
+在交互操作的 Selected 状态下，能够被拿起的交互对象
+
+“拿起” —— Grab ，这个操作会有两个阶段：
+
+* 拿起时：
+  被抓取对象 Interactable 会转换自己的 Position 和 Rotation 到抓取点位 Attach Transform。  
+  大多数是 Interactor 模型位置，比如 手中；也可能是 射线的远端
+* 丢下后：  
+  在释放时，速度会跟着 Interactor 旋转并继承它的速度
+
+除了 Simple Interactable 中相同的基本属性外，还有自己独有的属性：
+
+* Movement Type:  
+  指定该对象在被选中时的移动方式，可以通过设置刚体的速度、在固定更新时移动运动学刚体或在每帧直接更新变换。
+  * Velocity Tracking (速度跟踪 —— 不穿模):  
+   通过设置刚体的速度和角速度来移动可交互对象。  
+   如果不想让交互物体跟随交互对象移动时，穿过其他没有设置刚体的碰撞器，可以使用这种方法.
+   但这样做的代价是物体会显得滞后，无法像瞬时物体那样平滑移动。  
+    * Angular Velocity Damping： 
+       Unity 在跟踪 Interactor 旋转时抑制现有角速度的比例因子。数值越小，角速度衰减的时间越长。
+    * Angular Velocity Scale：    
+      统一缩放因子，用于在跟踪交互体旋转时更新刚体的跟踪角速度。
+  * Kinematic （运动学 —— 穿模）:  
+  通过向目标位置和方向移动 Kinematic Rigidbody 来移动可交互对象。  
+  如果希望视觉效果与物理状态保持同步，并且希望物体在跟随交互对象移动时能够穿过其他不使用刚体的碰撞器，则可以使用此方法。 
+  * Instantaneous（瞬时 —— 穿模）:  
+  通过在每一帧设置 Transform 的位置和旋转来移动可交互对象。  
+  如果您希望每帧都更新可视化表示，尽量减少延迟，则可以使用此方法，但当它跟随交互对象移动时，可以穿过其他不使用刚体碰撞器。
+  
+  
+* Retain Transform Parent  
+  启用时，在此对象被抛下后，使Unity能够将此对象的父对象重新设置为其最初的父对象。
+
+* Track Position:  
+  启用后，该对象在 Selected 时会跟随 Interactor 交互对象的位置移动。
+  * Smooth Position:  
+  启用后，会在跟随 Interactor 的位置移动时应用平滑处理。  
+    * Smooth Position Amount：  
+    缩放因子，用于在选中时跟随交互界面的位置进行平滑处理的程度。  
+    该值越大，该对象就越接近互动者的位置。
+    * Tighten Position：  
+    减少使用平滑处理时的最大跟随位置差。  
+    使用平滑处理时，平滑处理后的位置应与交互作用器位置保持多接近的分数。  
+    数值范围从 0 表示平滑后的跟随距离没有偏差，到 1 表示实际上完全没有平滑。
+* Track Rotation:  
+  启用后，该对象在 Selected 时会跟随 Interactor 交互对象的转动。
+  * Smooth Rotation:  
+  启用后，会在跟随 Interactor 转动时应用平滑处理。  
+    * Smooth Rotation Amount：  
+    缩放因子，用于在选中时跟随交互器 Interactor 的旋转进行平滑处理的程度。  
+    该值越大，该对象就越接近互动者的旋转。
+    * Tighten Rotation：    
+    减少使用平滑处理时的最大跟随旋转差。  
+    使用平滑处理时，平滑处理后的旋转应与交互作用器旋转保持多接近的分数。  
+    数值范围从 0 表示平滑后的跟随旋转没有偏差，到 1 表示实际上完全没有平滑。
+* Track Scale:  
+  启用后，该对象在 Selected 时会跟随 Interactor 交互对象的缩放。
+  * Smooth Scale:  
+  启用后，会在跟随 Interactor 缩放时应用平滑处理。  
+    * Smooth Scale Amount：  
+    缩放因子，用于在选中时跟随交互界面的缩放进行平滑处理的程度。  
+    该值越大，该对象就越接近互动者的缩放。
+    * Tighten Scale：    
+    减少使用平滑处理时的最大跟随缩放差。  
+    使用平滑处理时，平滑处理后的缩放应与交互作用器缩放保持多接近的分数。  
+    数值范围从 0 表示平滑后的跟随距离没有偏差，到 1 表示实际上完全没有平滑。
+* Throw On Detach：  
+  启用后，该对象在释放时将继承 Interactor 的速度 velocity 。运动学刚体(kinematic Rigidbody)不支持此功能
+  * Throw Smoothing Duration  
+    该值表示采集的采样用于速度计算的时间（最多 20 个前帧，取决于平滑持续时间和帧频）。  
+    例如，如果该值设置为 0.25，位置和速度值将取过去 0.25 秒的平均值。  
+    这些值的权重（乘以）也是由投掷平滑曲线决定的。  
+  * Throw Smoothing Curve  
+    投掷时用于加权速度平滑的曲线（最近帧在右侧）。  
+    默认情况下，该曲线的值为 1.0，因此在平滑持续时间内，所有平滑值都会被同等对待。
+  * Throw Velocity Scale  
+    投掷速度缩放：Unity 将在释放时应用于该对象从 Interactor 继承的速度缩放因子。
+  * Throw Angular Velocity Scale  
+    投掷角速度缩放：投掷时，Unity 将对该对象从交互作用器继承的角速度应用的缩放因子
+* Force Gravity On Detach  
+  强制此对象在释放时具有重力（如果此值为 false/未选中，则仍将使用抓取前的值）
+* Attach Transform  
+  在此 Interactable 上使用的抓握连接点（如果未设置，则使用此对象的位置）。
+* Secondary Attach Transform  
+  该 Interactable 上用于双手交互的第二个附着点。(如果不设置此属性，Unity 会使用第二个 Interactor 的 attach Transform）。
+* Use Dynamic Attach  
+  启用后，在选择时将根据 Interactor 的姿势(pose)来确定有效连接点。
+  * Match Position:  
+    在初始化抓取时，与 Interactor 的附着点位置相匹配。  
+    这将覆盖当前组件 Attach Transform 属性。
+  * Match Rotation:  
+    在初始化抓取时，与 Interactor 的附着点旋转相匹配。  
+    这将覆盖当前组件 Attach Transform 属性。 
+  * Snap To Collider Volume:  
+    调整动态连接点，使其位于此对象上的 collider 上或内侧。  
+  * Reinitialize Every Single Grab:  
+    当从多个抓取变回单个抓取时，重新初始化动态附着姿势。  
+    如果您想在释放第二只手后保持对象的当前姿势，而不是恢复到最初抓取时的附着姿势，请使用此功能。
+* Attach Ease In Time  
+  当前对象被 Selected 时，缓和（eases in）的时间（以秒为单位）（数值为 0 表示不缓和）。
+* Attach Point Compatibility Mode
+  控制计算对象目标位置时使用的方法。  
+  使用 AttachPointCompatibilityMode.Default 可使所有 XRBaseInteractable.MovementType 值之间的附着点保持一致。
+  * Default(Recommended)
+* Grab Transformers Configuration:  
+  抓握 Transformers 设置
+  * Add Default Grab Transform  
+    如果 "单个抓取变换器 "或 "多个抓取变换器 "列表为空，Unity 是否会添加默认的抓取变换器集（default set of grab transformers）。
+  * Starting Multiple Grab Transformers  
+    此 Interactable 启动时自动链接的抓取变换器（可选，可能为空）。  
+    用于选择多个交互对象。启动后，此属性将不再使用。  
+    当需要处理多个抓取变换器并指定顺序时，该属性非常有用。
+  * Starting Single Grab Transformers  
+    此 Interactable 启动时自动链接的抓取变换器（可选，可能为空）。  
+    用于单个交互对象的选择。启动后，此属性将不再使用。  
+    当需要处理多个抓取变换器并指定顺序时，该属性非常有用。
 ### 4.4 Locomotion 系统中的交互对象
 
 * 传送用：Teleportation Area/Anchor
