@@ -287,6 +287,11 @@ XR Ray Iteractor 相较 Direct Interactor 而言，多了射线后，就多出�
 * Recycle Delay Time:  
   设置对象移除后 socket 拒绝悬停的时间。如果已启用 Hover Socket Snapping 捕捉，则此属性不起任何作用。
   
+### Socket Interactor 使用时注意点：
+
+Socket Interactor 一般来说，在同一个GameObject 上，要搭配以下组件一同使用：
+* Collider:  
+  用来实现交互检测，但一定要设置为 Trigger。（Is Trigger 属性为 True）
 
 ### 3.5 Poke Interactor 戳（手指）交互器
 
