@@ -257,6 +257,37 @@ XR Ray Iteractor 相较 Direct Interactor 而言，多了射线后，就多出�
 
 ### 3.4 Socket Interactor 插孔（磁吸式）交互器
 
+顾名思义，插孔交互器 Socket Interactor 是用来做一个可以让交互对象 Interactable 插进去，快速定位用的特殊交互器。
+
+举个栗子，比如：在玩家身上挂武器、在墙上或武器架上挂陈列的兵器，等等；挂接的位置是一个 Socket Interactor，武器就是 Interactable；又比如：钥匙的钥匙孔或电池的电池插座，都可以用 Socket Interactor 来实现
+
+该组件的设计目的不是附加到控制器上（因此与 XRDirectInteractor 和 XRRayInteractor 不同，它不是从 XRBaseControllerInteractor 派生的），而是始终尝试选择悬停在其上的可交互对象（尽管不会对该可交互对象执行排他性选择）
+
+![](../../../imgs/xr-socket-interactor.png)
+
+### 独有属性
+
+* Show Interactable Hover Meshes:  
+  当交互对象悬停在交互器上时，是否显示交互器网格（交互器外观）
+  * Hover Mesh Material：  
+    悬停时，交互器所有材质
+  * Can't Hover Mesh Material：  
+    当插座中已有选定对象时，用于在悬停时渲染可交互网格的材质（如果没有提供材质，则将创建默认材质）。
+  * Hover Scale：  
+    悬停时缩放
+* Hover Socket Snapping ：
+  决定悬停时，交互对象是否应紧贴 socket Interactor 的附着变换 attach transform。  
+  请注意，这会导致 hover mesh 视觉效果发生 Z 打架(z-fighting)，因此不建议同时使用这两个选项。  如果启用，则会禁用悬停回收延迟功能(hover recycle delay)。
+* Socket Scale Mode:  
+  缩放模式，用于计算悬停时应用于可交互对象的缩放因子
+  * None : 不缩放
+  * Fixed ： 设置具体的缩放比例，三个轴都可单独设置
+  * Stretched to Fit Size : 当缩放模式设置为 "按尺寸拉伸 "时，用于计算应用于可交互对象的缩放因子的边界尺寸
+* Socket Active : 插孔是否生效
+* Recycle Delay Time:  
+  设置对象移除后 socket 拒绝悬停的时间。如果已启用 Hover Socket Snapping 捕捉，则此属性不起任何作用。
+  
+
 ### 3.5 Poke Interactor 戳（手指）交互器
 
 ## 4. Interactable 交互对象
