@@ -295,6 +295,42 @@ Socket Interactor 一般来说，在同一个GameObject 上，要搭配以下组
 
 ### 3.5 Poke Interactor 戳（手指）交互器
 
+Poke Interactor 属于所有 Interactor 中比较简单的第一个，是模拟人手，用手指 “戳/Poke” 的这种交互操作。
+
+通常和 Simple Interactable 组对使用。
+
+![](../../../imgs/XR_PokeInteractor.png)
+
+### 独有属性：
+
+* Poke Depth：  
+  设置戳操作的深度阈值，达到阈值，则认定为交互开始，自然值越小越灵敏。
+* Poke Width：  
+  设置戳操作的宽度阈值，达到阈值，则认定为交互开始，自然值越小越灵敏。
+* Poke Select Width:  
+  设置戳 Select 操作的深度阈值，达到阈值，则触发 select 事件，自然值越小越灵敏。
+* Poke Hover Radius:  
+  Hover 悬停事件的半径阈值，在此阈值范围内的交互可被评估为戳悬停。
+* Poke Interaction Offset：  
+  沿 "戳 " 可互动交互轴的距离，可使 "戳 "更快触发/更精确。
+* Physics Layer Mask：  
+  物理层掩码，用于限制戳球重叠。
+* Physics Trigger Interaction：  
+  确定戳球重叠是否会触发交互。
+* Require Poke Filter:  
+  表示有效目标是否只包括具有戳过滤器的对象。
+* Enable UI Interaction：  
+  是否允许和 UI 进行交互操作。
+* Debug Visualizations Enabled:  
+  是否显示拨动交互的调试视觉效果。视觉效果包括一个在触发悬停时变为绿色的球体，以及一个在触发选择时变为绿色的小球体。
+
+### 使用 Poke Interactor 时注意点
+
+默认情况下， Require Poke Filter 是选中状态，就是需要在 Interactable 挂接的游戏对象上，添加 XR Poke Filter 组件。通常建议是添加的，并且将 Poke Direction 设置位：Negative Y，模拟人手通常习惯的从上往下的按压操作。
+
+![](../../../imgs/XR_PokeFilter.png)
+
+
 ## 4. Interactable 交互对象
 
 交互对象必须同时再挂接碰撞体和刚体才能真正实现交互
