@@ -124,7 +124,7 @@ TensorFloat outputTensor = worker.PeekOutput() as TensorFloat;
 
 下面的示例对一个手写数字进行了分类。
 
-1. 准备工作：从 ONNX Model Zoo 下载手写识别 ONNX 模型文件，例如 MNIST 手写数字识别模型 mnist-8.onnx，并将其拖入项目窗口的 Assets 文件夹。
+1. 准备工作：从 ONNX Model Zoo 下载手写识别 ONNX 模型文件，例如 [MNIST 手写数字识别模型 mnist-12.onnx](https://github.com/onnx/models/blob/main/vision/classification/mnist/model/mnist-12.onnx)，并将其拖入项目窗口的 Assets 文件夹。
 
 2. 将以下脚本附加到场景中的一个 GameObject。
 ``` C#
