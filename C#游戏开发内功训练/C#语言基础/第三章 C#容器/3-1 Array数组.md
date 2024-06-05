@@ -1,4 +1,4 @@
-# Array 数组
+# 3-1 Array 数组
 
 ## 1. C# 数组
 
@@ -240,9 +240,57 @@ Array 类提供了各种用于数组的属性和方法。
 * 固定长度：在声明数组的时候，必须同时指明数组的长度，数组的长度过长，会造成内存浪费，数组的长度过短，会造成数据溢出的错误。
 * 插入、删除慢：空间的连续，导致了存储效率低，插入和删除元素效率比较低，而且麻烦。
 
+## 4. 泛型和数组
+
+数组也是一种泛型容器，因为它实现了 IList<T>，但又并未完全实现，其中某些方法未实现，比如添加和删除元素。
+
+详细信息：
+
+下限为零的单维数组自动实现 IList<T>。 这可使你创建可使用相同代码循环访问数组和其他集合类型的泛型方法。 此技术的主要用处在于读取集合中的数据。 IList<T> 接口无法用于添加元素或从数组删除元素。 如果在此上下文中尝试对数组调用 IList<T> 方法（例如 RemoveAt），则会引发异常。
+
+示例代码
+``` C#
+class Program
+{
+    static void Main()
+    {
+        int[] arr = { 0, 1, 2, 3, 4 };
+        List<int> list = new List<int>();
+
+        for (int x = 5; x < 10; x++)
+        {
+            list.Add(x);
+        }
+
+        ProcessItems<int>(arr);
+        ProcessItems<int>(list);
+    }
+
+    static void ProcessItems<T>(IList<T> coll)
+    {
+        // IsReadOnly returns True for the array and False for the List.
+        System.Console.WriteLine
+            ("IsReadOnly returns {0} for this collection.",
+            coll.IsReadOnly);
+
+        // The following statement causes a run-time exception for the
+        // array, but not for the List.
+        //coll.RemoveAt(4);
+
+        foreach (T item in coll)
+        {
+            System.Console.Write(item?.ToString() + " ");
+        }
+        System.Console.WriteLine();
+    }
+}
+```
+
 <br>
 <hr>
 <br>
 
 > 参考资料
-> * [C# 微软官方文档](https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/arrays/)
+> 
+> * [C# 数组 - 官方文档](https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/arrays/)
+> * [C# 泛型和数组 - 官方文档](https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/generics/generics-and-arrays)
