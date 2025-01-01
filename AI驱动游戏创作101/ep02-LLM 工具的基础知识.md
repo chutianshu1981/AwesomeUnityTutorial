@@ -16,6 +16,7 @@ LLM（大型语言模型）指的是基于深度学习技术训练的大规模�
 
 >扩展阅读：
 >[https://www.youtube.com/watch?v=LPZh9BOjkQs](https://www.youtube.com/watch?v=LPZh9BOjkQs)
+>B站转载：[https://www.bilibili.com/video/BV1Ve6JYXEtu/](https://www.bilibili.com/video/BV1Ve6JYXEtu/)
 ---
 
 
