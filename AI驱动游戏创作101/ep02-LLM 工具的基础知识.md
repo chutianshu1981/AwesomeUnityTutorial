@@ -22,6 +22,13 @@ LLM（大型语言模型）指的是基于深度学习技术训练的大规模�
 
 #### 二、RAG 和 Agent 增幅 LLM
 
+#### LLM 的不足之处
+
+* LLM的“幻觉”：答非所问
+* “健忘”：容易忘掉之前的交互内容
+* 知识时效性有限：截至最终训练时的知识库
+* 功能有限：仅仅具备文字推理功能
+
 在 LLM 的相关生态中，RAG（Retrieval-Augmented Generation）与智能代理（Agent）代表了两种重要的技术路径：
 
 1. **RAG：融合检索与生成**
@@ -36,7 +43,35 @@ LLM（大型语言模型）指的是基于深度学习技术训练的大规模�
 
 2. **Agent 智能代理：面向任务的执行系统**
 
-   智能代理是一种能够自主执行任务的系统，其本质是一种强化学习或规划算法与语言模型的集成。它能够理解复杂的指令并动态适应环境变化。例如，在开发复杂的开放世界游戏时，智能代理可以用来生成动态剧情分支，甚至实时调整游戏内 NPC 的行为逻辑。
+   智能代理是一种能够自主执行任务的系统，其本质是一种强化学习或规划算法与语言模型的集成。它能够理解复杂的指令并动态适应环境变化。
+   <br>
+   **广义**(理想化)：Agent 是能够感知其所处环境并采取行动以实现特定目标或完成特定任务的自主实体。
+   它可以广泛应用于机器人、自动驾驶、对话系统、推荐系统、游戏 AI、分布式系统以及多智能体协作等各种场景。
+   是实现 AGI（通用人工智能）的最佳途径。
+
+   **狭义**：可以通过工具应用扩充功能的，多模态的 AIGC 应用，比如 Chatgpt、文心智能体、通义智能体等
+   <br>
+   理论上来说，Agent 是一种 AI 技术，通常具有以下基本特性：
+      1）感知（Perception）
+
+      通过传感器、API 接口或其他方式获取其所处环境（Environment）的状态、信息、信号等。
+      环境可以是物理世界（如机器人传感器采集到的视觉、温度、位置等信息），也可以是虚拟/数字世界（如网络请求、数据库查询、游戏状态）。
+
+      2）决策（Decision-Making）
+
+      基于所感知到的环境信息，并结合其内部策略、模型或知识，决定下一步的行动（Action）。
+      决策方式可能包括基于规则系统、逻辑推理、机器学习、强化学习、规划算法或其他方法。
+
+      3）行动（Action/Actuation）
+
+      通过执行器、API 操作、网络调用或其它方式，对外部环境施加影响或进行改变。
+      动作的形式多种多样，如移动机器人车轮、发送指令给机械臂、与其他系统交互发送信号等。
+
+      4）目标（Goal/Objective）
+
+      智能代理通常被赋予一个或多个目标（Goal），它会**尝试最大化收益（或最小化代价）**并在环境中持续执行决策。
+   <br>
+   例如，在开发复杂的开放世界游戏时，智能代理可以用来生成动态剧情分支，甚至实时调整游戏内 NPC 的行为逻辑。
 
    ![](../imgs/Agent_bone.png)
 
@@ -95,7 +130,7 @@ LLM 在游戏策划中的应用不仅局限于文本生成，其潜力更体现�
 
 > 参考资料：
 >
-> * 
+> * [llm wiki](https://zh.wikipedia.org/wiki/%E5%A4%A7%E5%9E%8B%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B)
+> * [Some Core Principles of Large Language Model (LLM) Tuning](https://whatdhack.medium.com/some-core-principles-of-large-language-model-llm-tuning-0b581da9adbc)
 > * [https://github.com/datawhalechina/agent-tutorial/blob/main/docs/%E7%AC%AC%E4%B8%80%E7%AB%A0%EF%BC%9AAgent%E7%AE%80%E4%BB%8B/1.1%20Agent%E5%8E%9F%E7%90%86.md](https://github.com/datawhalechina/agent-tutorial/blob/main/docs/%E7%AC%AC%E4%B8%80%E7%AB%A0%EF%BC%9AAgent%E7%AE%80%E4%BB%8B/1.1%20Agent%E5%8E%9F%E7%90%86.md)
 > * [https://baoyu.io/translations/rag/advanced-rag-techniques-an-illustrated-overview](https://baoyu.io/translations/rag/advanced-rag-techniques-an-illustrated-overview)
->
