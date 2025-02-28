@@ -96,3 +96,170 @@
   **注意**  
   - Llama 3.3 和 Qwen 2.5 有很多不同版本，请优先选择 70B 及以上的，或者专门带有 Codding 或 Coder 文字的版本。
   - 另外，还有一些使用 DeepSeek 蒸馏方式，对  Llama 3.3 和 Qwen 2.5 进行蒸馏优化的模型，也可以尝试使用。
+
+## 6. MCP Server
+
+MCP Server（模型上下文协议服务端） 是一种为 AI LLM 应用（如 Claude 桌面版，或者 cline 等编程开发插件）提供安全访问外部资源能力的工具，其核心是通过标准化协议（MCP）实现 AI 与本地/远程资源的交互。
+
+它最早来自 **Anthropic AI**，就是 Claude 系列模型的母公司，最早是给 Claude 桌面版中提供扩展功能，后发展为一种标准协议，类似 USB-Type C 接口一样，方便各种公司及个人开发扩展工具。
+
+所以，简单来说，它是一个强大的扩展机制，它允许 AI 应用通过本地运行的服务器访问额外的工具和资源。
+
+关键词： **通用**  **扩展**
+
+### 6.1 基本概念
+
+MCP Server 主要功能：
+- **工具(Tools)**: 可执行的功能，比如 Git 操作、网络请求等
+- **资源(Resources)**: 可访问的数据源，如文件、API 响应等
+- **提示(Prompts)** ：预设指令模板，引导 AI 行为。
+
+统一 AI 与资源的交互逻辑
+
+### 6.2 主要用途
+
+1. **扩展 AI 能力**
+   - 允许 AI 执行特定领域的操作
+   - 提供额外的上下文和数据源
+
+2. **系统集成**
+   - 与本地开发环境集成
+   - 连接外部服务和 API
+
+3. **自定义功能**
+   - 开发者可以创建自己的 MCP Server
+   - 实现特定项目需求的工具
+
+### 6.3 常用 MCP Server 示例
+
+1. **Git MCP Server**
+   - 提供 Git 操作相关的工具
+   - 如：状态查看、提交代码、分支管理等
+ 
+2. **Fetch MCP Server**
+   - 提供网络请求功能
+   - 支持获取 HTML、Markdown、JSON 等格式数据
+
+其他，单看 Google 系列，就有：网盘、日历、云服务器操作、API 调用（如 google search） 等；
+
+别的各大互联网公司，都有类似的 Mcp server 可供选用
+
+### 6.4 官方资料
+
+- MCP SDK: https://github.com/modelcontextprotocol/sdk
+- 官方示例服务器: https://github.com/modelcontextprotocol/servers
+- 开发文档: https://github.com/modelcontextprotocol/servers/wiki
+- MCP server 市场：https://www.pulsemcp.com/
+
+### 6.5 安装使用方式
+
+MCP Server 有多种实现和安装方式，是因为，mcp server 通常使用三种不同的语言写成，比如 ts/js , python 或 java 。
+
+所以，主要的安装配置方式，分为以下几类：
+
+#### 6.5.1 TypeScript/JavaScript 实现
+
+安装方式：
+- git 拉取源码，在本地安装，通过 nodejs 运行
+- npm (yarn,pnpm) 等包管理工具，远程拉取安装，通过 nodejs 运行
+- 自己书写 js 代码，通过 nodejs 运行
+
+常用 配置示例：
+```json
+{
+  "mcpServers": {
+    "my-js-server": {
+      "command": "node",
+      "args": ["path/to/server/index.js"],
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
+}
+```
+
+#### 6.5.2 Python 实现
+
+安装方式：
+- git 拉取源码，在本地安装，通过 python 运行
+- pip（uv） 等包管理工具，远程拉取安装，通过 python 运行
+- 自己书写 python 代码，通过 python 运行
+
+配置示例：
+```json
+{
+  "mcpServers": {
+    "my-python-server": {
+      "command": "python",
+      "args": ["path/to/server/main.py"],
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
+}
+```
+
+#### 6.5.3 Java/Kotlin 实现
+
+安装方式：
+- git 拉取源码，在本地使用 maven/gradle 构建，运行 jar 包
+- 从 maven 中央仓库安装依赖，作为依赖库引入
+- 自己书写 java/kotlin 代码，通过 maven 或 gradle 构建运行
+
+配置示例：
+```json
+{
+  "mcpServers": {
+    "my-java-server": {
+      "command": "java",
+      "args": ["-jar", "path/to/server.jar"],
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
+}
+```
+
+#### 6.5.4 Docker 部署
+
+安装方式：
+- 使用 Dockerfile 构建自定义镜像运行
+- 使用 docker-compose 编排多容器服务
+- 从 Docker Hub 拉取预构建镜像直接运行
+- 基于已有镜像进行定制化构建
+
+配置示例：
+```json
+{
+  "mcpServers": {
+    "docker-server": {
+      "command": "docker",
+      "args": ["exec", "mcp-server", "/app/start.sh"],
+      "env": {
+        "MCP_SERVER_PORT": "8080",
+        "OTHER_ENV": "value"
+      },
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
+}
+```
+
+#### 6.5.5 通用配置说明
+
+MCP Server 配置文件位置：
+- VSCode Cool Cline 插件: `%APPDATA%\Code\User\globalStorage\saoudrizwan.claude-dev\settings\cline_mcp_settings.json`
+- Claude 桌面版: `%APPDATA%\Claude\claude_desktop_config.json`
+
+配置文件关键字段：
+- `command`: 启动命令
+- `args`: 命令参数
+- `env`: 环境变量
+- `disabled`: 是否禁用
+- `autoApprove`: 自动批准的操作列表
+
+安全注意事项：
+- 谨慎配置 autoApprove 权限
+- 敏感信息通过环境变量配置
+- 定期更新依赖和安全补丁
