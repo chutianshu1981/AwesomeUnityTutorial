@@ -3,13 +3,13 @@
 ## 一、角色设计
 
 ### 主角设计
-1. 使用MidJourney生成概念设计
+1. 生成概念设计
 ```
 关键提示词模板：
 /imagine prompt: pixel art character design, top-down view, 16-bit style, fantasy adventurer, [具体特征描述], 8 directional sprite sheet, clean outline, vibrant colors
 ```
 
-2. 使用Stable Diffusion进行像素化处理
+2. 进行像素化处理
 ```
 建议提示词：
 - 基础设定：pixel art, sprite sheet, game character, top-down view
@@ -18,12 +18,15 @@
 ```
 
 3. 角色动画帧处理流程
+
 - 使用AI生成基础姿态
-- 通过Aseprite进行逐帧调整
+- 通过Aseprite等工具进行逐帧调整
 - 优化动画过渡效果
 
 ### 敌人设计
+
 1. 常规敌人
+
 ```
 提示词模板：
 /imagine prompt: pixel art monster design, [怪物类型], top-down view, 16-bit style, fantasy game enemy, simple animation ready, clear silhouette
