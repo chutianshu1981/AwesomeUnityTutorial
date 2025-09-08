@@ -1,5 +1,7 @@
 # 艺术风格总体设计文档 ASID (Art Style Instruction Document)
 
+![](../../imgs/素材设计文档.jpg)
+
 ## 1. 文档概述
 
 ### 1.1 文档目的
