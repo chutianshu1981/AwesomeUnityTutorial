@@ -1,7 +1,7 @@
 {
   "permissions": {
     "allow": [
-      "Bash(dir \"D:\\Notes\\AwesomeUnityTutorial\\AI驱动游戏创作101\")"
+      "Bash(dir \"D:\\Notes\\AwesomeUnityTutorial\\AI驱动游戏创作101\\*.md\")"
     ],
     "deny": [],
     "ask": []
