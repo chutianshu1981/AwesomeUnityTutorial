@@ -10,7 +10,8 @@ This is an educational project demonstrating AI-driven game development for a 2D
 
 ### Main Documentation Files
 - `README.md` - Project overview and B站 course reference
-- `ep07-游戏设计总需求文档.md` - Complete Game Design Document with detailed integrated content and AI tools guide
+- `ep-总体需求文档.md` - Overall requirements document defining what the game should be (high-level needs)
+- `ep07-游戏总体概要设计文档.md` - Complete Game Design Document with detailed integrated content and AI tools guide (how to implement)
 - `ep06-1-游戏开发文档创建.md` - AI-driven game development documentation process
 - `ep06-AI辅助游戏开发--实例规划.md` - Instance planning for AI-assisted game development
 - `ep08-素材AI设计概述.md` - AI-generated game assets and materials overview
@@ -18,7 +19,7 @@ This is an educational project demonstrating AI-driven game development for a 2D
 - `GEMINI.md` - Gemini-specific documentation and prompts
 - `AI生成内容质量评估标准.md` - Comprehensive quality assessment standards for AI-generated content
 
-### Detailed Design Documents (`ep07-需求文档拆分/`)
+### Detailed Design Documents (`ep07-总体概要设计文档拆分/`)
 - `ep07-1-游戏机制设计.md` - Core game mechanics design
 - `ep07-2-战斗系统设计.md` - Combat system detailed design
 - `ep07-3-角色成长系统.md` - Character progression system
@@ -123,10 +124,11 @@ The project demonstrates comprehensive and systematic AI tool integration throug
 4. Include practical AI tool usage examples
 
 ### When Modifying Game Design
-1. Reference the master GDD (`ep07-游戏设计总需求文档.md`)
-2. Update corresponding detailed design documents in `ep07-需求文档拆分/`
-3. Ensure consistency across all related systems
-4. Document AI tool usage for any new features
+1. Reference the overall requirements document (`ep-总体需求文档.md`) for high-level needs
+2. Reference the master GDD (`ep07-游戏总体概要设计文档.md`) for implementation details
+3. Update corresponding detailed design documents in `ep07-总体概要设计文档拆分/`
+4. Ensure consistency across all related systems
+5. Document AI tool usage for any new features
 
 ### When Creating Assets
 1. Follow the asset structure in `ASD/` directory
@@ -142,7 +144,9 @@ The project demonstrates comprehensive and systematic AI tool integration throug
 
 ## File Naming Conventions
 - Episodes: `ep##-[description].md`
-- Game docs: `ep07-需求文档拆分/ep07-[number]-[topic].md`
+- Overall requirements: `ep-总体需求文档.md`
+- Game design docs: `ep07-游戏总体概要设计文档.md`
+- Detailed design docs: `ep07-总体概要设计文档拆分/ep07-[number]-[topic].md`
 - Assets: `ASD/[number]-[type]设计文档.md`
 - Development tasks: `dtd/dt-[number]-[topic].md`
 - Specialized asset docs: `ASD/[number]-[number]-[specific-type].md`
@@ -158,27 +162,36 @@ The project uses structured prompts with:
 
 ### Completed Enhancements
 
-**1. GDD Document Integration**
+**1. Documentation Structure Optimization**
+- Implemented proper software engineering document hierarchy:
+  - **Requirements Document** (`ep-总体需求文档.md`): Defines "what" to build (high-level needs)
+  - **Design Document** (`ep07-游戏总体概要设计文档.md`): Defines "how" to implement (technical details)
+  - **Planning Document** (`dtd/dt-00-计划任务总纲.md`): Defines "when" to execute (project management)
+- Created comprehensive overall requirements document with 11 chapters covering all aspects of game development
+- Extracted and refined requirements content from existing design documents
+- Renamed and reorganized design documents to reflect their proper role in development process
+
+**2. GDD Document Integration**
 - Replaced placeholder content with detailed game mechanics and combat system designs
 - Added comprehensive AI tools usage guide with structured prompts and workflows
 - Integrated content from detailed design documents into master GDD
 
-**2. AI Workflow Integration**
+**3. AI Workflow Integration**
 - Added AI-assisted workflows to key development modules (dt-01, dt-04)
 - Created specialized prompt templates for different development phases
 - Established quality control processes for AI-generated content
 
-**3. Quality Assessment Framework**
+**4. Quality Assessment Framework**
 - Created comprehensive quality assessment standards document
 - Established multi-dimensional evaluation criteria for AI-generated content
 - Implemented automated and manual quality control processes
 
-**4. Enhanced Project Structure**
+**5. Enhanced Project Structure**
 - Improved documentation organization and accessibility
 - Added cross-references between related documents
 - Enhanced AI tool usage guidelines throughout the project
 
-**5. AI Tool Configuration Correction**
+**6. AI Tool Configuration Correction**
 - Corrected AI tool configurations across all project documents
 - Standardized toolchain to use only actual development tools:
   - **Development**: Claude Code for coding and documentation
