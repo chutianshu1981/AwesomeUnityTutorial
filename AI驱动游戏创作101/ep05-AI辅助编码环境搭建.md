@@ -19,13 +19,13 @@
 
 ## 2. AI IDE 插件
 
-- [Cline](https://github.com/cline/cline)
-- Cline 的变体：Roo Code 、Cool Cline ......
+- [Claude Code](https://claude.ai/code)
+- [MCP Tools](https://modelcontextprotocol.io/)
 - [Codeium](https://codeium.com/)
 - 国产的，比如 通译灵码、腾讯与 AI 代码助手...
 
 > 建议：  
-> 推荐首选 Cool Cline 插件，国人做的，汉化较好（可以认为是 Roo code 的汉化版）。用熟练后，可以尝试迁移到任意别的 Cline 本体或变体。 
+> 推荐首选 Claude Code 插件，功能强大，支持多种编程语言和项目类型。配合 MCP Tools 可以实现更强大的扩展功能。 
 
 ## 3. AI API
 
@@ -45,8 +45,8 @@
 ## 4. 使用流程
 
 1. 安装 Visual Studio Code
-2. 安装插件：Cool Cline
-3. 点开 Cool Cline 插件，设置：
+2. 安装插件：Claude Code
+3. 点开 Claude Code 插件，设置：
    - 语言：中文
    - LLM Provider 设置：这里可以设置多个不同来源配置，可以自行命名，快速切换，我们先将第一个命名为 **硅基流动**
      - LLM Provider ：OpenAI 兼容
@@ -249,7 +249,7 @@ MCP Server 有多种实现和安装方式，是因为，mcp server 通常使用�
 #### 6.5.5 通用配置说明
 
 MCP Server 配置文件位置：
-- VSCode Cool Cline 插件: `%APPDATA%\Code\User\globalStorage\saoudrizwan.claude-dev\settings\cline_mcp_settings.json`
+- VSCode Claude Code 插件: 具体配置位置请参考 Claude Code 插件文档
 - Claude 桌面版: `%APPDATA%\Claude\claude_desktop_config.json`
 
 配置文件关键字段：

@@ -141,7 +141,7 @@
 
 ## 五、音频设计
 
-### 使用AudioCraft生成音效
+### 使用Google Audio Generation生成音效
 1. 战斗音效
 ```
 关键描述词：
@@ -214,8 +214,8 @@ Assets/
 ## 七、AI工具使用流程
 
 1. 创意生成
-- 使用MidJourney生成概念图
-- 参考概念图进行像素化处理
+- 使用Google nano生成概念图
+- 使用ComfyUI进行像素化处理
 - 细节调整和优化
 
 2. 批量处理

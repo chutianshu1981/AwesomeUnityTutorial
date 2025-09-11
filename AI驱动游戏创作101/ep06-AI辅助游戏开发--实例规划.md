@@ -8,7 +8,7 @@
 
 ### 1. 游戏设计与规划
 
-- 使用 LLM AI 工具 进行游戏机制设计
+- 使用 Claude Code 进行游戏机制设计
   - 核心玩法设计
   - 战斗系统设计
   - 角色成长系统设计
@@ -17,7 +17,7 @@
 
 ### 2. 素材准备阶段
 
-- 使用Comfy UI 和 Stable Diffusion 生成像素风格资源
+- 使用ComfyUI 和 Google nano/banana 生成像素风格资源
   - 角色设计与生成
   - 怪物设计与生成
   - 道具和装备设计
@@ -27,7 +27,7 @@
 
 ### 3. 项目搭建阶段
 
-- AI 编程插件辅助配置Unity项目
+- 使用Claude Code辅助配置Unity项目
   - 项目结构设置
   - 2D渲染管线配置
   - 像素完美相机设置
@@ -36,7 +36,7 @@
 
 ### 4. 核心系统开发
 
-- 实现角色系统（借助Copilot）
+- 实现角色系统（使用Claude Code）
   - 角色移动控制
   - 动画状态机设置
   - 基础战斗系统
@@ -55,7 +55,7 @@
 - 任务系统实现
   - 主线任务设计
   - 支线任务生成
-- NPC对话系统（LLM驱动）
+- NPC对话系统（使用LLM）
   - 对话内容生成
   - 分支剧情设计
 
@@ -76,7 +76,7 @@
 
 ### 7. 测试与优化
 
-- AI辅助的代码审查
+- 使用Claude Code进行代码审查
 - 性能优化
   - 资源加载优化
   - 渲染性能提升
@@ -97,22 +97,20 @@
 
 ### 代码开发
 
-- Cline：实时代码生成和重构
-- ChatGPT/Claude：代码问题解决和算法设计
-- 通义灵码/Copilot：智能代码补全
+- Claude Code：实时代码生成和重构
+- MCP Tools：代码问题解决和算法设计
 
 ### 资源生成
 
-- Google Gemini 2：概念图和氛围图生成
-- Stable Diffusion/Comfy UI：像素风格资源生成
-- AudioCraft(暂定)：音效和音乐生成
-- AI 动画生成
+- Google nano：概念图和氛围图生成
+- ComfyUI：像素风格资源生成
+- Google banana/Veo3：视频和动态内容生成
+- Google Audio Generation：音效和音乐生成
 
 ### 工作流程
 
-- Claude/GPT：文档编写和工作流程优化
-- Cline：代码质量控制
-- 自定义AI工具：特定任务处理
+- Claude Code：文档编写和工作流程优化
+- MCP Tools：代码质量控制和特定任务处理
 
 ## 注意事项
 
