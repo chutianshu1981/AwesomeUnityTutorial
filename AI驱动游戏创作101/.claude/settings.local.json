@@ -6,7 +6,8 @@
       "Bash(/agents)",
       "Bash(jobs:*)",
       "WebSearch",
-      "Bash(claude:*)"
+      "Bash(claude:*)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []
